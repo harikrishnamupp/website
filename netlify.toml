@@ -10,6 +10,11 @@
   command = "yarn build-preview"
   environment = {DEV_ENVIRONMENT_VARIABLE_FILE = "false", ALGOLIA_ADMIN_KEY = "0", CTP_GITHUB_API_BUILD_TOKEN="0", CTP_GITHUB_API_BUILD_KEY="0"}
 
+[context.api-staging]
+  command = "yarn build-preview"
+  environment = {DEV_ENVIRONMENT_VARIABLE_FILE = "false", ALGOLIA_ADMIN_KEY = "0", CTP_GITHUB_API_BUILD_TOKEN="0", CTP_GITHUB_API_BUILD_KEY="0"}
+
+
 [[redirects]]
   from = "/api/v1/*"
   to = "https://api.covidtracking.com/v1/:splat"
