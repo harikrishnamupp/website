@@ -7,3 +7,11 @@
     }
   }
 }
+
+.state-dropdown {
+  display: none;
+  @media (min-width: $viewport-lg) {
+    display: block;
+    @include margin(16, top);
+  }
+}
