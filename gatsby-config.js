@@ -5,12 +5,17 @@ require(`@babel/register`)({
 require('dotenv').config()
 const setTZ = require('set-tz')
 const { DateTime } = require('luxon')
+const fs = require('fs')
 const algoliaQueries = require('./src/utilities/algolia').queries
 const sassImports = require('./src/utilities/sass-imports.js')
 const formatStringList = require('./src/components/utils/format')
   .formatStringList
 
 setTZ('America/New_York')
+
+const usDates = JSON.parse(fs.readFileSync('./_api/v1/us/daily.json'))
+const latestDate = usDates.sort((a, b) => (a.date > b.date ? -1 : 1)).shift()
+  .date
 
 const gatsbyConfig = {
   siteMetadata: {
@@ -41,11 +46,14 @@ const gatsbyConfig = {
     'gatsby-plugin-remove-trailing-slashes',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    `gatsby-plugin-svgr`,
+    'gatsby-plugin-svgr',
     {
       resolve: 'gatsby-plugin-sass',
       options: {
         data: sassImports,
+        cssLoaderOptions: {
+          localIdentName: '[sha1:hash:hex:4]',
+        },
       },
     },
     {
@@ -227,6 +235,22 @@ const gatsbyConfig = {
       },
     },
     {
+      resolve: 'gatsby-source-covid-tracking-tweets',
+      options: {
+        type: 'Tweets',
+        files: {
+          tweets: `${__dirname}/_data/tweets.json`,
+          pinnedTweets: `${__dirname}/_data/pinned_tweets.json`,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-render-components',
+      options: {
+        path: `${__dirname}/public/images`,
+      },
+    },
+    {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.CONTENTFUL_SPACE,
@@ -288,7 +312,7 @@ const gatsbyConfig = {
       resolve: `gatsby-plugin-global-context`,
       options: {
         context: {
-          sevenDaysAgo: DateTime.local()
+          sevenDaysAgo: DateTime.fromISO(latestDate)
             .minus({ days: 7 })
             .toISODate(),
         },
@@ -298,6 +322,7 @@ const gatsbyConfig = {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
+          '~plugins': 'plugins',
           '~components': 'src/components',
           '~context': 'src/context',
           '~data': 'src/data',
@@ -397,7 +422,6 @@ const gatsbyConfig = {
         ],
       },
     },
-    'gatsby-plugin-minify-classnames',
   ],
 }
 
