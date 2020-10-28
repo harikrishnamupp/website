@@ -29,19 +29,19 @@ const HomepageLatestTotals = () => {
             <h2>Latest totals:</h2>
           </div>
           <Row className={latestTotalsStyles.allTotals}>
-            <Col width={[4, 6, 4]}>
+            <Col width={[4, 6, 4]} paddingRight={[0, 0, 32]}>
               <Total
                 label="Total test results"
                 number={<FormatNumber number={totals.totalTestResults} />}
               />
             </Col>
-            <Col width={[4, 6, 4]}>
+            <Col width={[4, 6, 4]} paddingLeft={[0, 0, 0]}>
               <Total
                 label="Cases"
                 number={<FormatNumber number={totals.positive} />}
               />
             </Col>
-            <Col width={[4, 6, 4]}>
+            <Col width={[4, 6, 4]} paddingLeft={[0, 0, 32]}>
               <Total
                 label="Deaths"
                 number={<FormatNumber number={totals.death} />}
