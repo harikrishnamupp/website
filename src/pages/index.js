@@ -21,9 +21,7 @@ const Homepage = () => (
 
     <main id="main">
       <Datasets />
-      <Container>
-        <LatestTotals />
-      </Container>
+      <LatestTotals />
       <BlogList />
       <Container>
         <WhoIsUsing />
