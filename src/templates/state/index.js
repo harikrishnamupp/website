@@ -46,6 +46,7 @@ const StateTemplate = ({ pageContext, data, path }) => {
           population={covidStateInfo.childPopulation.population}
           metadata={contentfulStateOrTerritory}
           lastUpdated={covidState.lastUpdateEt}
+          longTermCare={data.covidStateInfo.childLtc}
         />
         <StateTweets tweets={allTweets} name={state.name} />
       </StateNavWrapper>
@@ -79,32 +80,31 @@ export const query = graphql`
       childPopulation {
         population
       }
+      childLtc {
+        facilities
+        current {
+          date
+          total_cases
+          total_death
+        }
+        last {
+          date
+          total_cases
+          total_death
+        }
+      }
     }
     allCovidUsDaily {
       nodes {
-        totalTestResults
-        totalTestResultsIncrease
-        positive
-        positiveIncrease
-        pending
-        negative
-        hospitalized
-        hospitalizedIncrease
-        hospitalizedCurrently
-        death
-        deathIncrease
         date(formatString: "YYYYMMDD")
         childPopulation {
           deathIncrease {
             percent
           }
-          hospitalizedCurrently {
-            percent
-          }
           positiveIncrease {
             percent
           }
-          totalTestResultsIncrease {
+          hospitalizedCurrently {
             percent
           }
         }
@@ -117,7 +117,7 @@ export const query = graphql`
       negative
       lastUpdateEt
       dateModified(formatString: "MMM D, YYYY h:mm a")
-      pending
+
       hospitalizedCurrently
       hospitalizedCumulative
       inIcuCurrently
@@ -130,7 +130,6 @@ export const query = graphql`
       deathConfirmed
       totalTestResults
       dataQualityGrade
-      posNeg
       probableCases
       positiveCasesViral
       positiveTestsViral
@@ -146,20 +145,12 @@ export const query = graphql`
       sort: { fields: date, order: DESC }
     ) {
       nodes {
-        totalTestResults
-        totalTestEncountersViral
         totalTestEncountersViralIncrease
         totalTestsViralIncrease
         totalTestsPeopleViralIncrease
         totalTestResultsIncrease
-        positive
         positiveIncrease
-        pending
-        negative
-        hospitalized
         hospitalizedCurrently
-        hospitalizedIncrease
-        death
         deathIncrease
         date(formatString: "YYYYMMDD")
         childPopulation {

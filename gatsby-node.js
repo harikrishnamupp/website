@@ -144,7 +144,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/templates/state/index.js`),
       context: {
         ...node,
-        nameRegex: `/${node.name}|${node.state.toUpperCase()}/g`,
+        nameRegex: `/${node.name}| ${node.state.toUpperCase()}/g`,
         slug,
       },
     })
@@ -176,6 +176,12 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `/data/state/${slug}/screenshots`,
       component: path.resolve(`./src/templates/state/screenshots.js`),
+      context: node,
+    })
+
+    createPage({
+      path: `/data/state/${slug}/long-term-care`,
+      component: path.resolve(`./src/templates/state/long-term-care.js`),
       context: node,
     })
   })
