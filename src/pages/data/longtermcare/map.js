@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import algoliasearch from 'algoliasearch'
 import { graphql, useStaticQuery } from 'gatsby'
 import mapboxgl from 'mapbox-gl'
+import MapboxGeocoder from '@mapbox/mapbox-sdk/services/geocoding'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { Form, Input } from '~components/common/form'
 import { Row, Col } from '~components/common/grid'
@@ -20,8 +21,9 @@ const Map = ({ center, zoom }) => {
       }
     `,
   )
+  mapboxgl.accessToken = data.site.siteMetadata.mapBoxToken
   const [facilities, setFacilities] = useState(false)
-  const [query, setQuery] = useState(false)
+  const [query, setQuery] = useState('NEW RICHMOND, WV')
   const client = algoliasearch(
     process.env.GATSBY_ALGOLIA_APP_ID,
     process.env.GATSBY_ALGOLIA_SEARCH_KEY,
@@ -34,12 +36,15 @@ const Map = ({ center, zoom }) => {
   const mapNode = useRef(null)
   const mapRef = useRef(null)
 
+  const geocodingClient = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl,
+  })
   useEffect(() => {
     const mapCenter = center
     const mapZoom = zoom
 
     // Token must be set before constructing map
-    mapboxgl.accessToken = data.site.siteMetadata.mapBoxToken
 
     const map = new mapboxgl.Map({
       container: mapNode.current,
@@ -90,15 +95,24 @@ const Map = ({ center, zoom }) => {
       <Form
         onSubmit={event => {
           event.preventDefault()
-          console.log(query)
-          index
-            .search('', {
-              aroundLatLng: '37.5706625, -81.4748938',
-              aroundRadius: 1000000,
-              distinct: true,
+          geocodingClient
+            .forwardGeocode({
+              query,
+              limit: 1,
             })
-            .then(({ hits }) => {
-              setFacilities(hits)
+            .send()
+            .then(response => {
+              const feature = response.body.features.pop()
+              feature.center.reverse()
+              index
+                .search('', {
+                  aroundLatLng: feature.center.join(','),
+                  aroundRadius: 1000000,
+                  distinct: true,
+                })
+                .then(({ hits }) => {
+                  setFacilities(hits)
+                })
             })
         }}
         noMargin
@@ -110,6 +124,7 @@ const Map = ({ center, zoom }) => {
               label="Search facilities"
               placeholder="Enter a city or zip code"
               hideLabel
+              defaultValue="NEW RICHMOND, WV"
               onChange={event => {
                 setQuery(event.target.value)
               }}
