@@ -36,6 +36,7 @@ const gatsbyConfig = {
     hiddenApiTags: ['Racial data tracker', 'Internal Endpoints'],
     stateChartDateRange: 90,
     stateChartPerCapMeasure: 1000000,
+    mapBoxToken: process.env.GATSBY_MAPBOX_API_TOKEN,
   },
   plugins: [
     'gatsby-plugin-sitemap',
