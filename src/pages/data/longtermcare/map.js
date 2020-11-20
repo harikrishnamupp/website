@@ -52,7 +52,6 @@ const Map = ({ center, zoom }) => {
     map.addControl(new mapboxgl.NavigationControl(), 'top-right')
 
     map.on('load', () => {
-      console.log('map onload')
       /* add sources
       Object.entries(sources).forEach(([id, source]) => {
         map.addSource(id, source)
