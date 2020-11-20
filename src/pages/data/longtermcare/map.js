@@ -69,7 +69,7 @@ const Map = ({ center, zoom }) => {
         [e.point.x + 5, e.point.y + 5],
       ]
       const features = map.queryRenderedFeatures(bbox, {
-        layers: ['facilities'],
+        layers: ['west-virginia-facilities'],
       })
 
       setActiveFacilities(features)
@@ -95,7 +95,7 @@ const Map = ({ center, zoom }) => {
               const feature = response.body.features.pop()
               mapRef.current.easeTo({
                 center: feature.center,
-                zoom: 5,
+                zoom: 7,
               })
             })
         }}
@@ -136,14 +136,22 @@ const Map = ({ center, zoom }) => {
           {activeFacilities && (
             <>
               {activeFacilities.map(({ properties }) => (
-                <Fragment key={properties.name}>
-                  <h3>{properties.name}</h3>
-                  <p>
-                    <strong>Number of cases</strong>
-                    {properties.resident_cases}
+                <Fragment key={properties.facilitynamenormalized}>
+                  <h3>{properties.facilitynamenormalized}</h3>
+                  <address>
+                    {properties.addresscms}
                     <br />
-                    <strong>Number of deaths</strong>
-                    {properties.resident_deaths}
+                    {properties.citycms}, {properties.state}
+                  </address>
+                  <p>
+                    <strong>Resident cases</strong>{' '}
+                    {properties.residentpositives}
+                    <br />
+                    <strong>Resident deaths</strong> {properties.residentdeaths}
+                    <br />
+                    <strong>Staff cases</strong> {properties.staffpositive}
+                    <br />
+                    <strong>Staff deaths</strong> {properties.staffdeaths}
                   </p>
                 </Fragment>
               ))}
