@@ -1,6 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import React, { useEffect, useState, useRef } from 'react'
-import algoliasearch from 'algoliasearch'
+import React, { Fragment, useEffect, useState, useRef } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import mapboxgl from 'mapbox-gl'
 import MapboxGeocoder from '@mapbox/mapbox-sdk/services/geocoding'
@@ -22,13 +21,8 @@ const Map = ({ center, zoom }) => {
     `,
   )
   mapboxgl.accessToken = data.site.siteMetadata.mapBoxToken
-  const [facilities, setFacilities] = useState(false)
+  const [activeFacilities, setActiveFacilities] = useState(false)
   const [query, setQuery] = useState('NEW RICHMOND, WV')
-  const client = algoliasearch(
-    process.env.GATSBY_ALGOLIA_APP_ID,
-    process.env.GATSBY_ALGOLIA_SEARCH_KEY,
-  )
-  const index = client.initIndex('test_ltc_geo_facilities')
   if (typeof window === 'undefined') {
     return null
   }
@@ -70,25 +64,22 @@ const Map = ({ center, zoom }) => {
       }) */
     })
 
+    map.on('click', e => {
+      const bbox = [
+        [e.point.x - 5, e.point.y - 5],
+        [e.point.x + 5, e.point.y + 5],
+      ]
+      const features = map.queryRenderedFeatures(bbox, {
+        layers: ['facilities'],
+      })
+
+      setActiveFacilities(features)
+    })
+
     return () => {
       map.remove()
     }
   }, [])
-
-  useEffect(() => {
-    if (!facilities || !facilities.length) {
-      return
-    }
-    facilities.forEach(facility => {
-      if (typeof facility._geoloc === 'undefined') {
-        return
-      }
-      const marker = new mapboxgl.Marker()
-        .setLngLat([facility._geoloc.lng, facility._geoloc.lat])
-        .addTo(mapRef.current)
-      console.log(marker)
-    })
-  }, [facilities])
 
   return (
     <>
@@ -103,16 +94,10 @@ const Map = ({ center, zoom }) => {
             .send()
             .then(response => {
               const feature = response.body.features.pop()
-              feature.center.reverse()
-              index
-                .search('', {
-                  aroundLatLng: feature.center.join(','),
-                  aroundRadius: 1000000,
-                  distinct: true,
-                })
-                .then(({ hits }) => {
-                  setFacilities(hits)
-                })
+              mapRef.current.easeTo({
+                center: feature.center,
+                zoom: 5,
+              })
             })
         }}
         noMargin
@@ -135,19 +120,38 @@ const Map = ({ center, zoom }) => {
           </Col>
         </Row>
       </Form>
-      <div
-        style={{
-          position: 'relative',
-          flex: ' 1 0 auto',
-          width: '100%',
-          height: 500,
-        }}
-      >
-        <div ref={mapNode} style={{ width: '100%', height: '100%' }} />
-      </div>
-      <div>
-        <h2>List</h2>
-      </div>
+      <Row>
+        <Col width={[4, 6, 8]}>
+          <div
+            style={{
+              position: 'relative',
+              flex: ' 1 0 auto',
+              width: '100%',
+              height: 500,
+            }}
+          >
+            <div ref={mapNode} style={{ width: '100%', height: '100%' }} />
+          </div>
+        </Col>
+        <Col width={[4, 6, 4]}>
+          {activeFacilities && (
+            <>
+              {activeFacilities.map(({ properties }) => (
+                <Fragment key={properties.name}>
+                  <h3>{properties.name}</h3>
+                  <p>
+                    <strong>Number of cases</strong>
+                    {properties.resident_cases}
+                    <br />
+                    <strong>Number of deaths</strong>
+                    {properties.resident_deaths}
+                  </p>
+                </Fragment>
+              ))}
+            </>
+          )}
+        </Col>
+      </Row>
     </>
   )
 }
