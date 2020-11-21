@@ -69,7 +69,7 @@ const Map = ({ center, zoom }) => {
         [e.point.x + 5, e.point.y + 5],
       ]
       const features = map.queryRenderedFeatures(bbox, {
-        layers: ['west-virginia-facilities'],
+        layers: ['facilities'],
       })
 
       setActiveFacilities(features)
@@ -119,46 +119,39 @@ const Map = ({ center, zoom }) => {
           </Col>
         </Row>
       </Form>
-      <Row>
-        <Col width={[4, 6, 8]}>
-          <div
-            style={{
-              position: 'relative',
-              flex: ' 1 0 auto',
-              width: '100%',
-              height: 500,
-            }}
-          >
-            <div ref={mapNode} style={{ width: '100%', height: '100%' }} />
-          </div>
-        </Col>
-        <Col width={[4, 6, 4]}>
-          {activeFacilities && (
-            <>
-              {activeFacilities.map(({ properties }) => (
-                <Fragment key={properties.facilitynamenormalized}>
-                  <h3>{properties.facilitynamenormalized}</h3>
-                  <address>
-                    {properties.addresscms}
-                    <br />
-                    {properties.citycms}, {properties.state}
-                  </address>
-                  <p>
-                    <strong>Resident cases</strong>{' '}
-                    {properties.residentpositives}
-                    <br />
-                    <strong>Resident deaths</strong> {properties.residentdeaths}
-                    <br />
-                    <strong>Staff cases</strong> {properties.staffpositive}
-                    <br />
-                    <strong>Staff deaths</strong> {properties.staffdeaths}
-                  </p>
-                </Fragment>
-              ))}
-            </>
-          )}
-        </Col>
-      </Row>
+      <div
+        style={{
+          position: 'relative',
+          flex: ' 1 0 auto',
+          width: '100%',
+          height: 500,
+        }}
+      >
+        <div ref={mapNode} style={{ width: '100%', height: '100%' }} />
+      </div>
+      {activeFacilities && (
+        <>
+          {activeFacilities.map(({ properties }) => (
+            <Fragment key={properties.facilitynamenormalized}>
+              <h3>{properties.facilitynamenormalized}</h3>
+              <address>
+                {properties.addresscms}
+                <br />
+                {properties.citycms}, {properties.state}
+              </address>
+              <p>
+                <strong>Resident cases</strong> {properties.residentpositives}
+                <br />
+                <strong>Resident deaths</strong> {properties.residentdeaths}
+                <br />
+                <strong>Staff cases</strong> {properties.staffpositive}
+                <br />
+                <strong>Staff deaths</strong> {properties.staffdeaths}
+              </p>
+            </Fragment>
+          ))}
+        </>
+      )}
     </>
   )
 }
