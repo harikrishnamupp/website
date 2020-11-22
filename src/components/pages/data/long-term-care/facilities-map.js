@@ -7,7 +7,6 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import { Form, Input } from '~components/common/form'
 import { Row, Col } from '~components/common/grid'
 import facilitiesMapStyles from './facilities-map.module.scss'
-import Toggle from '~components/common/toggle'
 
 const FacilityDetails = ({ facility }) => (
   <>
@@ -162,7 +161,19 @@ const FacilitiesMap = ({ center, zoom }) => {
       </Form>
       <Row className={facilitiesMapStyles.legend}>
         <Col width={[4, 3, 6]}>
-          <Toggle options={layers} state={mapLayer} setState={setMapLayer} />
+          <div className={facilitiesMapStyles.toggle}>
+            {layers.map(layer => (
+              <button
+                className={layer === mapLayer && facilitiesMapStyles.active}
+                type="button"
+                onClick={() => {
+                  setMapLayer(layer)
+                }}
+              >
+                {layer}
+              </button>
+            ))}
+          </div>
         </Col>
         <Col width={[4, 3, 6]}>
           <p>
