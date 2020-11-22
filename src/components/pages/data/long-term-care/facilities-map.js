@@ -161,7 +161,11 @@ const FacilitiesMap = ({ center, zoom }) => {
       </Form>
       <Row className={facilitiesMapStyles.legend}>
         <Col width={[4, 3, 6]}>
-          <div className={facilitiesMapStyles.toggle}>
+          <div
+            className={facilitiesMapStyles.toggle}
+            role="group"
+            aria-label="Toggle map layers"
+          >
             {layers.map(layer => (
               <button
                 className={layer === mapLayer && facilitiesMapStyles.active}
