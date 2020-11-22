@@ -1,18 +1,69 @@
 .tooltip {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  width: 300px;
-  border: 1px solid $color-slate-700;
-  background: white;
-  @include padding(16);
-  @include type-size(100);
-  h3 {
+  display: none;
+  @media (hover: hover) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 300px;
+    border: 1px solid $color-slate-700;
+    background: white;
+    @include padding(16);
     @include type-size(100);
-    font-weight: bold;
-    &:first-child {
-      margin-top: 0;
+    h3 {
+      @include type-size(100);
+      font-weight: bold;
+      &:first-child {
+        margin-top: 0;
+      }
     }
+  }
+}
+
+.modal {
+  display: none;
+  @media (hover: none) {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background: hsla(0, 0%, 0%, 0.33);
+
+    .content {
+      width: 100vw;
+      @include padding(16);
+      margin: 5vh auto;
+      background: white;
+      outline: none;
+    }
+
+    .close {
+      float: right;
+      @include remove-button-style();
+      @include type-size(500);
+      font-weight: bold;
+      margin-top: -15px; // ignore-style-rules
+    }
+  }
+}
+
+.legend {
+  @include margin(32, bottom);
+  p {
+    @include margin(16, top);
+    @media (min-width: $viewport-md) {
+      text-align: right;
+      margin: 0;
+    }
+  }
+  .no-outbreak {
+    border-bottom: 3px solid $color-plum-600;
+  }
+  .outbreak {
+    border-bottom: 3px solid $color-honey-400;
   }
 }

@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import React, { Fragment, useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import mapboxgl from 'mapbox-gl'
 import MapboxGeocoder from '@mapbox/mapbox-sdk/services/geocoding'
@@ -7,6 +7,27 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import { Form, Input } from '~components/common/form'
 import { Row, Col } from '~components/common/grid'
 import facilitiesMapStyles from './facilities-map.module.scss'
+import Toggle from '~components/common/toggle'
+
+const FacilityDetails = ({ facility }) => (
+  <>
+    <h3>{facility.facilitynamenormalized}</h3>
+    <address>
+      {facility.addresscms}
+      <br />
+      {facility.citycms}, {facility.state}
+    </address>
+    <p>
+      <strong>Resident cases</strong> {facility.residentpositives}
+      <br />
+      <strong>Resident deaths</strong> {facility.residentdeaths}
+      <br />
+      <strong>Staff cases</strong> {facility.staffpositive}
+      <br />
+      <strong>Staff deaths</strong> {facility.staffdeaths}
+    </p>
+  </>
+)
 
 const FacilitiesMap = ({ center, zoom }) => {
   const data = useStaticQuery(
@@ -24,6 +45,8 @@ const FacilitiesMap = ({ center, zoom }) => {
   const [activeFacility, setActiveFacility] = useState(false)
   const [query, setQuery] = useState(false)
   const [tooltip, setTooltip] = useState({ x: 0, y: 0 })
+  const [mapLayer, setMapLayer] = useState('Cases')
+  const layers = ['Cases', 'Deaths']
   if (typeof window === 'undefined') {
     return null
   }
@@ -35,6 +58,23 @@ const FacilitiesMap = ({ center, zoom }) => {
     accessToken: mapboxgl.accessToken,
     mapboxgl,
   })
+
+  const selectFacility = event => {
+    const bbox = [
+      [event.point.x - 5, event.point.y - 5],
+      [event.point.x + 5, event.point.y + 5],
+    ]
+    const features = mapRef.current.queryRenderedFeatures(bbox, {
+      layers: [layers[0]],
+    })
+    if (!features || !features.length) {
+      setActiveFacility(false)
+      return
+    }
+    setActiveFacility(features[0].properties)
+    setTooltip(event.point)
+  }
+
   useEffect(() => {
     const mapCenter = center
     const mapZoom = zoom
@@ -53,37 +93,34 @@ const FacilitiesMap = ({ center, zoom }) => {
     map.addControl(new mapboxgl.NavigationControl(), 'top-right')
 
     map.on('load', () => {
-      /* add sources
-      Object.entries(sources).forEach(([id, source]) => {
-        map.addSource(id, source)
-      })
-
-      // add layers
-      layers.forEach(layer => {
-        map.addLayer(layer)
-      }) */
+      map.setLayoutProperty('Deaths', 'visibility', 'none')
     })
 
-    map.on('mousemove', e => {
-      const bbox = [
-        [e.point.x - 5, e.point.y - 5],
-        [e.point.x + 5, e.point.y + 5],
-      ]
-      const features = map.queryRenderedFeatures(bbox, {
-        layers: ['facilities'],
-      })
-      if (!features || !features.length) {
-        setActiveFacility(false)
-        return
-      }
-      setActiveFacility(features[0].properties)
-      setTooltip(e.point)
+    map.on('mousemove', event => {
+      selectFacility(event)
+    })
+
+    map.on('click', event => {
+      selectFacility(event)
     })
 
     return () => {
       map.remove()
     }
   }, [])
+
+  useEffect(() => {
+    if (!mapRef.current || !mapRef.current.isStyleLoaded()) {
+      return
+    }
+    layers.forEach(layer => {
+      mapRef.current.setLayoutProperty(
+        layer,
+        'visibility',
+        layer === mapLayer ? 'visible' : 'none',
+      )
+    })
+  }, [mapLayer])
 
   return (
     <>
@@ -123,6 +160,24 @@ const FacilitiesMap = ({ center, zoom }) => {
           </Col>
         </Row>
       </Form>
+      <Row className={facilitiesMapStyles.legend}>
+        <Col width={[4, 3, 6]}>
+          <Toggle options={layers} state={mapLayer} setState={setMapLayer} />
+        </Col>
+        <Col width={[4, 3, 6]}>
+          <p>
+            Long-term care facilities{' '}
+            <span className={facilitiesMapStyles.noOutbreak}>
+              not experiencing
+            </span>{' '}
+            and{' '}
+            <span className={facilitiesMapStyles.outbreak}>
+              experiencing an outbreak
+            </span>
+            .
+          </p>
+        </Col>
+      </Row>
       <div
         style={{
           position: 'relative',
@@ -132,26 +187,34 @@ const FacilitiesMap = ({ center, zoom }) => {
         }}
       >
         {activeFacility && (
-          <div
-            className={facilitiesMapStyles.tooltip}
-            style={{ left: tooltip.x - 150, top: tooltip.y + 15 }}
-          >
-            <h3>{activeFacility.facilitynamenormalized}</h3>
-            <address>
-              {activeFacility.addresscms}
-              <br />
-              {activeFacility.citycms}, {activeFacility.state}
-            </address>
-            <p>
-              <strong>Resident cases</strong> {activeFacility.residentpositives}
-              <br />
-              <strong>Resident deaths</strong> {activeFacility.residentdeaths}
-              <br />
-              <strong>Staff cases</strong> {activeFacility.staffpositive}
-              <br />
-              <strong>Staff deaths</strong> {activeFacility.staffdeaths}
-            </p>
-          </div>
+          <>
+            <div
+              className={facilitiesMapStyles.tooltip}
+              style={{ left: tooltip.x - 150, top: tooltip.y + 15 }}
+            >
+              <FacilityDetails facility={activeFacility} />
+            </div>
+            <div
+              className={facilitiesMapStyles.modal}
+              aria-modal
+              aria-label={activeFacility.facilitynamenormalized}
+            >
+              <div className={facilitiesMapStyles.content}>
+                <button
+                  type="button"
+                  className={facilitiesMapStyles.close}
+                  onClick={event => {
+                    event.preventDefault()
+                    setActiveFacility(false)
+                  }}
+                  aria-label="Close"
+                >
+                  &times;
+                </button>
+                <FacilityDetails facility={activeFacility} />
+              </div>
+            </div>
+          </>
         )}
         <div ref={mapNode} style={{ width: '100%', height: '100%' }} />
       </div>
