@@ -39,6 +39,7 @@ const Header = withSearch(
     returnLinksContent,
     hero,
     centerTitle,
+    showWarning = false,
   }) => {
     const data = useStaticQuery(graphql`
       query {
@@ -250,7 +251,7 @@ const Header = withSearch(
               {hero}
             </Container>
           </div>
-          {!hero && <ThanksgivingWarning />}
+          {showWarning && <ThanksgivingWarning />}
         </header>
       </>
     )
