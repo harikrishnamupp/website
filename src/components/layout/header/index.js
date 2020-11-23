@@ -22,6 +22,7 @@ import MobileMenu from './mobile-menu'
 import HeaderSubNavigation from './sub-navigation'
 import ReturnLinks from './return-links'
 import Tools from './tools'
+import ThanksgivingWarning from './thanksgiving-warning'
 
 const expandStyles = {
   open: { background: colors.colorPlum800 },
@@ -249,6 +250,7 @@ const Header = withSearch(
               {hero}
             </Container>
           </div>
+          {!hero && <ThanksgivingWarning />}
         </header>
       </>
     )
