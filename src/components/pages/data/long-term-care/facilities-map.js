@@ -10,12 +10,10 @@ import facilitiesMapStyles from './facilities-map.module.scss'
 
 const FacilityDetails = ({ facility }) => (
   <>
-    <h3>{facility.facilitynamenormalized}</h3>
-    <address>
-      {facility.addresscms}
-      <br />
-      {facility.citycms}, {facility.state}
-    </address>
+    <h3>{facility.facilityname}</h3>
+    <p>
+      <strong>{facility.ctpfacilitycategorization}</strong>
+    </p>
     <p>
       <strong>Resident cases</strong> {facility.residentpositives}
       <br />
@@ -64,12 +62,13 @@ const FacilitiesMap = ({ center, zoom }) => {
       [event.point.x + 5, event.point.y + 5],
     ]
     const features = mapRef.current.queryRenderedFeatures(bbox, {
-      layers: [layers[0]],
+      layers,
     })
     if (!features || !features.length) {
       setActiveFacility(false)
       return
     }
+    console.log(features[0].properties)
     setActiveFacility(features[0].properties)
     setTooltip(event.point)
   }
