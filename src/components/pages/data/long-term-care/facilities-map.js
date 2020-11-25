@@ -187,6 +187,10 @@ const FacilitiesMap = ({ center, zoom }) => {
             <span className={facilitiesMapStyles.outbreak}>
               experiencing an outbreak
             </span>
+            . Some states{' '}
+            <span className={facilitiesMapStyles.onlyOutbreak}>
+              only report outbreaks
+            </span>
             .
           </p>
         </Col>
