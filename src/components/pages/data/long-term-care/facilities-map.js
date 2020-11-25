@@ -68,7 +68,6 @@ const FacilitiesMap = ({ center, zoom }) => {
       setActiveFacility(false)
       return
     }
-    console.log(features[0].properties)
     setActiveFacility(features[0].properties)
     setTooltip(event.point)
   }
