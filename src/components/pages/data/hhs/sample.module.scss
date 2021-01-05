@@ -1,0 +1,48 @@
+.state {
+  stroke: $color-slate-700;
+  fill: transparent;
+}
+
+.hospital {
+  opacity: 0.6;
+  stroke-width: 1.5px;
+  stroke: $color-honey-400;
+  fill: $color-honey-400;
+}
+
+.slider {
+  width: 100%;
+  @media (min-width: $viewport-lg) {
+    width: 30%;
+    margin: 0 auto;
+  }
+  [data-reach-slider-input] {
+    height: 10px;
+  }
+  [data-reach-slider-handle] {
+    cursor: move;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 10px;
+    z-index: 1;
+    transform-origin: center;
+    border: 1.5px solid $color-slate-600;
+  }
+  [data-reach-slider-track] {
+    width: 100%;
+    height: inherit;
+    position: relative;
+    border-radius: 0.25rem;
+    background: $color-slate-100;
+    border: 1.5px solid $color-slate-400;
+  }
+  [data-reach-slider-range] {
+    height: 100%;
+    border-radius: inherit;
+    left: 0;
+    bottom: 0;
+  }
+}

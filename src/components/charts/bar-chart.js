@@ -29,6 +29,8 @@ const BarChart = ({
   showTicks,
   width,
   height,
+  activeDate,
+  activeColor,
   yMax,
   yTicks,
   lastXTick,
@@ -205,7 +207,11 @@ const BarChart = ({
               height={yScale(0) - yScale(d.value)}
               width={xScale.bandwidth()}
               fillOpacity={lineData ? 1 : 0.8}
-              fill={fill}
+              fill={
+                activeDate && d.date.getTime() === activeDate.getTime()
+                  ? activeColor
+                  : fill
+              }
               className={renderTooltipContents && styles.interactiveBar}
               onMouseOver={event => hover(event, d)}
               onFocus={event => hover(event, d)}
