@@ -186,17 +186,17 @@ const StateSummary = ({
                 totalTestsPeopleViral={data.totalTestsPeopleViral}
                 unknownUnits={metadata && metadata.testUnitsUnknown}
               />
-              <TestsAntibodyCard
-                stateSlug={stateSlug}
-                stateName={stateName}
-                totalTestsAntibody={data.totalTestsAntibody}
-                totalTestsPeopleAntibody={data.totalTestsPeopleAntibody}
-              />
               <TestsAntigenCard
                 stateSlug={stateSlug}
                 stateName={stateName}
                 totalTestsAntigen={data.totalTestsAntigen}
                 totalTestsPeopleAntigen={data.totalTestsPeopleAntigen}
+              />
+              <TestsAntibodyCard
+                stateSlug={stateSlug}
+                stateName={stateName}
+                totalTestsAntibody={data.totalTestsAntibody}
+                totalTestsPeopleAntibody={data.totalTestsPeopleAntibody}
               />
             </>
           )}
