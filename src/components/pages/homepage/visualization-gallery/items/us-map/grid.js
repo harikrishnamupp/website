@@ -74,7 +74,12 @@ const Grid = ({ states, us, relatedPost, metric, disclaimer = false }) => {
           setShowUs(false)
         }}
       >
-        <DialogContent className={gridStyle.modal}>
+        <DialogContent
+          className={gridStyle.modal}
+          aria-label={
+            showUs ? 'National overview' : `${activeState.name} overview`
+          }
+        >
           <button
             className={gridStyle.modalClose}
             type="button"
