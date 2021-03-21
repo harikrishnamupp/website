@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components : Common: Container renders correctly 1`] = `
+<div
+  className="container container"
+>
+  <div
+    className="full"
+  >
+    <p>
+      Sample child
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Components : Common: Container: Centered renders correctly 1`] = `
+<div
+  className="container container"
+>
+  <div
+    className="centered narrow"
+  >
+    <p>
+      Sample child
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Components : Common: Container: Narrow renders correctly 1`] = `
+<div
+  className="container container"
+>
+  <div
+    className="narrow"
+  >
+    <p>
+      Sample child
+    </p>
+  </div>
+</div>
+`;

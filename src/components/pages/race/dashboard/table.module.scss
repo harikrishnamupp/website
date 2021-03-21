@@ -1,0 +1,49 @@
+.table {
+  table-layout: fixed;
+}
+
+.missing-data {
+  background-color: $color-error-light;
+  a {
+    color: black;
+  }
+  span {
+    line-height: 1.5;
+    white-space: initial;
+  }
+}
+
+td.missing-data {
+  text-align: left;
+  padding-left: spacer(24);
+  padding-right: spacer(24);
+}
+
+.header-text {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+th.missing-data {
+  min-width: 11em;
+  span {
+    text-align: left;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  img {
+    max-width: spacer(24);
+    margin-right: spacer(8);
+  }
+  span {
+    display: inline-flex;
+  }
+}
+
+.symbol-spacer {
+  display: inline-block;
+  width: 3rem;
+  margin-left: spacer(8);
+  text-align: left;
+}

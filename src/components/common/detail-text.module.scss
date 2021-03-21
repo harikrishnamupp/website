@@ -1,0 +1,24 @@
+.detail-text {
+  color: $color-slate-600;
+
+  display: flex;
+
+  @include type-size(200);
+  cite {
+    font-style: italic;
+  }
+  a {
+    color: $color-slate-600;
+  }
+  &.small {
+    @include type-size(100);
+  }
+}
+
+table + .detail-text {
+  @include margin(24, bottom);
+}
+
+.centered {
+  text-align: center;
+}

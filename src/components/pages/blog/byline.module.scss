@@ -1,0 +1,120 @@
+.byline-base {
+  display: flex;
+  align-items: center;
+
+  @include type-size(100);
+  line-height: 1.2;
+
+  .headshot-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    grid-row-gap: spacer(8);
+
+    margin-right: spacer(16);
+
+    @media (max-width: $viewport-sm) {
+      display: none;
+    }
+
+    &.three-plus-headshots {
+      margin-right: spacer(8);
+      img {
+        margin-right: spacer(24);
+      }
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: spacer(8);
+
+      &:last-child {
+        margin-right: spacer(8);
+      }
+    }
+  }
+  .byline-text {
+    span {
+      display: block;
+    }
+  }
+  .author {
+    display: inherit;
+    line-height: 1.5;
+    .author-inner {
+      display: inline;
+    }
+  }
+  .date {
+    margin-top: 0.125rem; //ignore-style-rule
+    color: $color-slate-600;
+    @include margin(4, top);
+    grid-column-start: span 2;
+  }
+}
+
+.dark-background {
+  .date {
+    color: $color-plum-300;
+  }
+  .author {
+    color: white;
+    .author-inner {
+      color: white;
+      &:focus {
+        @include link-focus-dark-bg;
+      }
+    }
+    a.author-inner {
+      &:hover {
+        @include link-hover-dark-bg;
+      }
+    }
+  }
+}
+
+.byline {
+  @extend .byline-base;
+  margin: spacer(16) 0;
+}
+
+.byline--small-margin {
+  @extend .byline-base;
+  margin: spacer(8) 0;
+  p {
+    margin-bottom: spacer(8);
+  }
+}
+
+.byline--small-margin--image {
+  @extend .byline-base;
+  margin-top: 0;
+  margin-bottom: spacer(8);
+  .headshot-container,
+  .headshot-container img {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.one-line-byline {
+  @include type-size(100);
+  line-height: 2.5;
+  .author::after {
+    content: '  \2022  ';
+    color: $color-slate-500;
+  }
+  .author {
+    color: $color-slate-700;
+    font-style: italic;
+  }
+  line-height: 28px;
+  .related-date {
+    white-space: nowrap;
+  }
+}
+
+p.one-line-byline {
+  margin-bottom: 0;
+}

@@ -1,0 +1,17 @@
+.highlight {
+  margin-top: spacer(32);
+  p {
+    @include type-size(300);
+    margin: 0;
+    @media (min-width: $viewport-md) {
+      max-width: toRem(600);
+      margin: 0 auto;
+      @include type-size(400);
+      text-align: center;
+    }
+  }
+}
+
+.number {
+  font-weight: bold;
+}

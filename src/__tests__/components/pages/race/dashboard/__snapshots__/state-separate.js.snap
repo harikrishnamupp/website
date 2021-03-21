@@ -1,0 +1,1465 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components : Pages : Race : Dashboard : State Separate renders correctly 1`] = `
+<div>
+  <div
+    className="stateOverview"
+  >
+    <div
+      className="note"
+    >
+      <div
+        className="container"
+      >
+        <p>
+          The following tables reflect only those cases and deaths where
+           
+          race
+           is known and reported by 
+          Alabama
+          . If this state’s reporting percentages are low, interpret with caution.
+        </p>
+      </div>
+    </div>
+  </div>
+  <h3
+    className="tableTitle"
+  >
+    Cases and deaths by race
+  </h3>
+  <div>
+    <table
+      className="table table"
+    >
+      <thead>
+        <tr>
+          <th
+            className="group"
+            scope="col"
+          >
+            <span
+              role="text"
+            >
+              Race
+            </span>
+          </th>
+          <th
+            className="borderLeft percent"
+            scope="col"
+          >
+            <span
+              role="text"
+            >
+              Percentage of
+              <br />
+              population
+            </span>
+          </th>
+          <th
+            className="percent missingData"
+            scope="col"
+          >
+            <span
+              role="text"
+            >
+              <img
+                alt="Alert icon"
+                src="test-file-stub"
+              />
+              <span
+                className="headerText"
+              >
+                Percentage of
+                <br />
+                cases
+              </span>
+            </span>
+          </th>
+          <th
+            className="percent"
+            scope="col"
+          >
+            <span
+              role="text"
+            >
+              <span
+                className="headerText"
+              >
+                Percentage of
+                <br />
+                deaths
+                <div
+                  className="symbolSpacer"
+                />
+              </span>
+            </span>
+          </th>
+          <th
+            className="percent missingData"
+            scope="col"
+          >
+            <span
+              role="text"
+            >
+              <img
+                alt="Alert icon"
+                src="test-file-stub"
+              />
+              <span
+                className="headerText"
+              >
+                Percentage of
+                <br />
+                tests
+              </span>
+            </span>
+          </th>
+          <th
+            className="percent missingData"
+            scope="col"
+          >
+            <span
+              role="text"
+            >
+              <img
+                alt="Alert icon"
+                src="test-file-stub"
+              />
+              <span
+                className="headerText"
+              >
+                Percentage of
+                <br />
+                hospitalizations
+              </span>
+            </span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th
+            className="group"
+            scope="row"
+          >
+            <span
+              role="text"
+            >
+              Black or African American alone
+            </span>
+          </th>
+          <td
+            className="borderLeft"
+          >
+            0
+            %
+          </td>
+          <td
+            className="missingData"
+            rowSpan={7}
+          >
+            <span>
+              Alabama
+               does not report 
+              race
+               data for 
+              cases
+              .
+               
+              <a
+                href="/race/get-better-data"
+              >
+                Help us get better data.
+              </a>
+            </span>
+          </td>
+          <td
+            className=""
+          >
+            <span
+              data-reach-tooltip-trigger=""
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseMove={[Function]}
+            >
+              <span
+                className="highlight"
+              >
+                0
+                %
+              </span>
+            </span>
+            <div
+              className="symbolSpacer"
+            >
+              <span
+                className="note"
+                data-reach-tooltip-trigger=""
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseMove={[Function]}
+              >
+                <a
+                  href="#notes-al"
+                >
+                  <span
+                    className="a11y-only"
+                  >
+                    Race notes: blackDeath
+                  </span>
+                  <span>
+                    9
+                  </span>
+                </a>
+              </span>
+            </div>
+          </td>
+          <td
+            className="missingData"
+            rowSpan={7}
+          >
+            <span>
+              Alabama
+               does not report 
+              race
+               data for 
+              tests
+              .
+               
+              <a
+                href="/race/get-better-data"
+              >
+                Help us get better data.
+              </a>
+            </span>
+          </td>
+          <td
+            className="missingData"
+            rowSpan={7}
+          >
+            <span>
+              Alabama
+               does not report 
+              race
+               data for 
+              hospitalizations
+              .
+               
+              <a
+                href="/race/get-better-data"
+              >
+                Help us get better data.
+              </a>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <th
+            className="group"
+            scope="row"
+          >
+            <span
+              role="text"
+            >
+              Asian alone
+            </span>
+          </th>
+          <td
+            className="borderLeft"
+          >
+            0
+            %
+          </td>
+          <td
+            className=""
+          >
+            <span
+              data-reach-tooltip-trigger=""
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseMove={[Function]}
+            >
+              <span
+                className="highlight"
+              >
+                0
+                %
+              </span>
+            </span>
+            <div
+              className="symbolSpacer"
+            >
+              <span
+                className="note"
+                data-reach-tooltip-trigger=""
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseMove={[Function]}
+              >
+                <a
+                  href="#notes-al"
+                >
+                  <span
+                    className="a11y-only"
+                  >
+                    Race notes: asianDeath
+                  </span>
+                  <span>
+                    13
+                  </span>
+                </a>
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th
+            className="group"
+            scope="row"
+          >
+            <span
+              role="text"
+            >
+              Native Hawaiian and Pacific Islander alone
+            </span>
+          </th>
+          <td
+            className="borderLeft"
+          >
+            36
+            %
+          </td>
+          <td
+            className=""
+          >
+            <span
+              data-reach-tooltip-trigger=""
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseMove={[Function]}
+            >
+              <span
+                className="highlight"
+              >
+                0
+                %
+              </span>
+            </span>
+            <div
+              className="symbolSpacer"
+            >
+              <span
+                className="note"
+                data-reach-tooltip-trigger=""
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseMove={[Function]}
+              >
+                <a
+                  href="#notes-al"
+                >
+                  <span
+                    className="a11y-only"
+                  >
+                    Race notes: nhpiDeath
+                  </span>
+                  <span>
+                    15
+                  </span>
+                </a>
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th
+            className="group"
+            scope="row"
+          >
+            <span
+              role="text"
+            >
+              American Indian or Alaska Native alone
+            </span>
+          </th>
+          <td
+            className="borderLeft"
+          >
+            0
+            %
+          </td>
+          <td
+            className=""
+          >
+            <span
+              data-reach-tooltip-trigger=""
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseMove={[Function]}
+            >
+              <span
+                className="highlight"
+              >
+                0
+                %
+              </span>
+            </span>
+            <div
+              className="symbolSpacer"
+            >
+              <span
+                className="note"
+                data-reach-tooltip-trigger=""
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseMove={[Function]}
+              >
+                <a
+                  href="#notes-al"
+                >
+                  <span
+                    className="a11y-only"
+                  >
+                    Race notes: aianDeath
+                  </span>
+                  <span>
+                    17
+                  </span>
+                </a>
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th
+            className="group"
+            scope="row"
+          >
+            <span
+              role="text"
+            >
+              Two or more races
+            </span>
+          </th>
+          <td
+            className="borderLeft"
+          >
+            99
+            %
+          </td>
+          <td
+            className=""
+          >
+            <span
+              data-reach-tooltip-trigger=""
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseMove={[Function]}
+            >
+              <span
+                className="highlight"
+              >
+                0
+                %
+              </span>
+            </span>
+            <div
+              className="symbolSpacer"
+            >
+              <span
+                className="note"
+                data-reach-tooltip-trigger=""
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseMove={[Function]}
+              >
+                <a
+                  href="#notes-al"
+                >
+                  <span
+                    className="a11y-only"
+                  >
+                    This data should not be compared with percentage of the the population. Race notes: twoDeath
+                  </span>
+                  <span>
+                    19
+                  </span>
+                </a>
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th
+            className="group"
+            scope="row"
+          >
+            <span
+              role="text"
+            >
+              White alone
+            </span>
+          </th>
+          <td
+            className="borderLeft"
+          >
+            3
+            %
+          </td>
+          <td
+            className=""
+          >
+            <span
+              data-reach-tooltip-trigger=""
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseMove={[Function]}
+            >
+              <span
+                className="highlight"
+              >
+                0
+                %
+              </span>
+            </span>
+            <div
+              className="symbolSpacer"
+            >
+              <span
+                className="note"
+                data-reach-tooltip-trigger=""
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseMove={[Function]}
+              >
+                <a
+                  href="#notes-al"
+                >
+                  <span
+                    className="a11y-only"
+                  >
+                    This data should not be compared with percentage of the the population. Race notes: whiteDeath
+                  </span>
+                  <span>
+                    21
+                  </span>
+                </a>
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th
+            className="group"
+            scope="row"
+          >
+            <span
+              role="text"
+            >
+              Some other race alone
+            </span>
+          </th>
+          <td
+            className="borderLeft"
+          >
+            31
+            %
+          </td>
+          <td
+            className=""
+          >
+            <span
+              data-reach-tooltip-trigger=""
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseMove={[Function]}
+            >
+              <span
+                className="highlight"
+              >
+                12
+                %
+              </span>
+            </span>
+            <div
+              className="symbolSpacer"
+            >
+              <span
+                className="note"
+                data-reach-tooltip-trigger=""
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseMove={[Function]}
+              >
+                <a
+                  href="#notes-al"
+                >
+                  <span
+                    className="a11y-only"
+                  >
+                    This data should not be compared with percentage of the the population. Race notes: otherDeath
+                  </span>
+                  <span>
+                    23
+                  </span>
+                </a>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h4
+    className="header"
+    id="notes-al"
+  >
+    Notes
+     
+    <span
+      className="a11y-only"
+    >
+      on 
+      race
+       for 
+      Alabama
+    </span>
+  </h4>
+  <ul
+    className="list"
+  >
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          1
+        </span>
+      </span>
+       
+      Race notes: otherSpecialCase
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          2
+        </span>
+      </span>
+       
+      Race notes: whiteSpecialCase
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          3
+        </span>
+      </span>
+       
+      Race notes: twoSpecialCase
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          4
+        </span>
+      </span>
+       
+      Race notes: nhpiSpecialCase
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          5
+        </span>
+      </span>
+       
+      Race notes: aianSpecialCase
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          6
+        </span>
+      </span>
+       
+      Race notes: asianSpecialCase
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          7
+        </span>
+      </span>
+       
+      Race notes: blackSpecialCase
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          8
+        </span>
+      </span>
+       
+      Race notes: blackPos
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          9
+        </span>
+      </span>
+       
+      Race notes: blackDeath
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          10
+        </span>
+      </span>
+       
+      Race notes: latinXPos
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          11
+        </span>
+      </span>
+       
+      Race notes: latinXDeath
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          12
+        </span>
+      </span>
+       
+      Race notes: asianPos
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          13
+        </span>
+      </span>
+       
+      Race notes: asianDeath
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          14
+        </span>
+      </span>
+       
+      This data should not be compared with percentage of the the population. Race notes: nhpiPos
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          15
+        </span>
+      </span>
+       
+      Race notes: nhpiDeath
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          16
+        </span>
+      </span>
+       
+      Race notes: aianPos
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          17
+        </span>
+      </span>
+       
+      Race notes: aianDeath
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          18
+        </span>
+      </span>
+       
+      This data should not be compared with percentage of the the population. Race notes: twoPos
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          19
+        </span>
+      </span>
+       
+      This data should not be compared with percentage of the the population. Race notes: twoDeath
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          20
+        </span>
+      </span>
+       
+      This data should not be compared with percentage of the the population. Race notes: whitePos
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          21
+        </span>
+      </span>
+       
+      This data should not be compared with percentage of the the population. Race notes: whiteDeath
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          22
+        </span>
+      </span>
+       
+      This data should not be compared with percentage of the the population. Race notes: otherPos
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          23
+        </span>
+      </span>
+       
+      This data should not be compared with percentage of the the population. Race notes: otherDeath
+    </li>
+  </ul>
+  <div
+    className="stateOverview ethnicityOverview"
+  >
+    <div
+      className="note"
+    >
+      <div
+        className="container"
+      >
+        <p>
+          The following tables reflect only those cases and deaths where
+           
+          ethnicity
+           is known and reported by 
+          Alabama
+          . If this state’s reporting percentages are low, interpret with caution.
+        </p>
+      </div>
+    </div>
+  </div>
+  <h3
+    className="tableTitle"
+  >
+    Cases and deaths by ethnicity
+  </h3>
+  <div>
+    <table
+      className="table table"
+    >
+      <thead>
+        <tr>
+          <th
+            className="group"
+            scope="col"
+          >
+            <span
+              role="text"
+            >
+              Ethnicity
+            </span>
+          </th>
+          <th
+            className="borderLeft percent"
+            scope="col"
+          >
+            <span
+              role="text"
+            >
+              Percentage of
+              <br />
+              population
+            </span>
+          </th>
+          <th
+            className="percent"
+            scope="col"
+          >
+            <span
+              role="text"
+            >
+              <span
+                className="headerText"
+              >
+                Percentage of
+                <br />
+                cases
+                <div
+                  className="symbolSpacer"
+                />
+              </span>
+            </span>
+          </th>
+          <th
+            className="percent missingData"
+            scope="col"
+          >
+            <span
+              role="text"
+            >
+              <img
+                alt="Alert icon"
+                src="test-file-stub"
+              />
+              <span
+                className="headerText"
+              >
+                Percentage of
+                <br />
+                deaths
+              </span>
+            </span>
+          </th>
+          <th
+            className="percent missingData"
+            scope="col"
+          >
+            <span
+              role="text"
+            >
+              <img
+                alt="Alert icon"
+                src="test-file-stub"
+              />
+              <span
+                className="headerText"
+              >
+                Percentage of
+                <br />
+                tests
+              </span>
+            </span>
+          </th>
+          <th
+            className="percent missingData"
+            scope="col"
+          >
+            <span
+              role="text"
+            >
+              <img
+                alt="Alert icon"
+                src="test-file-stub"
+              />
+              <span
+                className="headerText"
+              >
+                Percentage of
+                <br />
+                hospitalizations
+              </span>
+            </span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th
+            className="group"
+            scope="row"
+          >
+            <span
+              role="text"
+            >
+              Hispanic or Latino
+            </span>
+          </th>
+          <td
+            className="borderLeft"
+          >
+            0
+            %
+          </td>
+          <td
+            className=""
+          >
+            <span
+              data-reach-tooltip-trigger=""
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseMove={[Function]}
+            >
+              <span
+                className="highlight"
+              >
+                0
+                %
+              </span>
+            </span>
+            <div
+              className="symbolSpacer"
+            >
+              <span
+                className="note"
+                data-reach-tooltip-trigger=""
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseMove={[Function]}
+              >
+                <a
+                  href="#notes-al"
+                >
+                  <span
+                    className="a11y-only"
+                  >
+                    Race notes: latinXPos
+                  </span>
+                  <span>
+                    4
+                  </span>
+                </a>
+              </span>
+            </div>
+          </td>
+          <td
+            className="missingData"
+            rowSpan={2}
+          >
+            <span>
+              Alabama
+               does not report 
+              ethnicity
+               data for 
+              deaths
+              .
+               
+              <a
+                href="/race/get-better-data"
+              >
+                Help us get better data.
+              </a>
+            </span>
+          </td>
+          <td
+            className="missingData"
+            rowSpan={2}
+          >
+            <span>
+              Alabama
+               does not report 
+              ethnicity
+               data for 
+              tests
+              .
+               
+              <a
+                href="/race/get-better-data"
+              >
+                Help us get better data.
+              </a>
+            </span>
+          </td>
+          <td
+            className="missingData"
+            rowSpan={2}
+          >
+            <span>
+              Alabama
+               does not report 
+              ethnicity
+               data for 
+              hospitalizations
+              .
+               
+              <a
+                href="/race/get-better-data"
+              >
+                Help us get better data.
+              </a>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <th
+            className="group"
+            scope="row"
+          >
+            <span
+              role="text"
+            >
+              Not Hispanic or Latino
+            </span>
+          </th>
+          <td
+            className="borderLeft"
+          >
+            0
+            %
+          </td>
+          <td
+            className=""
+          >
+            <span
+              data-reach-tooltip-trigger=""
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseMove={[Function]}
+            >
+              <span
+                className="highlight"
+              >
+                0
+                %
+              </span>
+            </span>
+            <div
+              className="symbolSpacer"
+            >
+              <span
+                className="note"
+                data-reach-tooltip-trigger=""
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseMove={[Function]}
+              >
+                <a
+                  href="#notes-al"
+                >
+                  <span
+                    className="a11y-only"
+                  >
+                    Race notes: nonhispanicPos
+                  </span>
+                  <span>
+                    6
+                  </span>
+                </a>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h4
+    className="header"
+    id="notes-al"
+  >
+    Notes
+     
+    <span
+      className="a11y-only"
+    >
+      on 
+      ethnicity
+       for 
+      Alabama
+    </span>
+  </h4>
+  <ul
+    className="list"
+  >
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          1
+        </span>
+      </span>
+       
+      Race notes: nonhispanicSpecialCase
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          2
+        </span>
+      </span>
+       
+      Race notes: latinXSpecialCase
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          3
+        </span>
+      </span>
+       
+      Race notes: latinXDeath
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          4
+        </span>
+      </span>
+       
+      Race notes: latinXPos
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          5
+        </span>
+      </span>
+       
+      Race notes: nonhispanicDeath
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          6
+        </span>
+      </span>
+       
+      Race notes: nonhispanicPos
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Components : Pages : Race : Dashboard : State Separate renders correctly 2`] = `
+<div
+  className="container"
+>
+  <table
+    aria-hidden={true}
+    className="table"
+    role="presentation"
+  >
+    <tbody>
+      <tr>
+        <td />
+        <td />
+        <td />
+        <td />
+      </tr>
+      <tr>
+        <td />
+        <td />
+        <td />
+        <td />
+      </tr>
+      <tr>
+        <td />
+        <td />
+        <td />
+        <td />
+      </tr>
+      <tr>
+        <td />
+        <td />
+        <td />
+        <td />
+      </tr>
+      <tr>
+        <td />
+        <td />
+        <td />
+        <td />
+      </tr>
+      <tr>
+        <td />
+        <td />
+        <td />
+        <td />
+      </tr>
+    </tbody>
+  </table>
+  <div
+    className="alert"
+  >
+    <div
+      className="title"
+    >
+      <img
+        alt="Alert icon"
+        src="test-file-stub"
+      />
+      <span>
+        No Data
+      </span>
+    </div>
+    <div
+      className="content"
+    >
+      <p>
+         does not share data about race or ethnicity.
+         
+        <a
+          href="/race/get-better-data"
+        >
+          Help us advocate for better data
+        </a>
+        .
+      </p>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,16 @@
+name: header
+items:
+  - title: The Data
+    link: /data
+    subNavigation: data
+  - title: About the Data
+    link: /about-data
+    subNavigation: about-data
+  - title: Race & Ethnicity
+    link: /race
+    subNavigation: race
+  - title: Nursing Homes
+    link: /nursing-homes-long-term-care-facilities
+    subNavigation: nursing-homes-long-term-care-facilities
+  - title: Analysis & Updates
+    link: /analysis-updates

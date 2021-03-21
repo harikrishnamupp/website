@@ -1,0 +1,26 @@
+.container {
+  max-width: toRem(864);
+  @include margin(24, left right);
+
+  @media (min-width: $viewport-md) {
+    @include margin(64, left right);
+  }
+
+  @media (min-width: $viewport-lg) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.header {
+    margin: 0;
+
+    @media (min-width: $viewport-md) {
+      @include margin(64, left right);
+    }
+
+    @media (min-width: $viewport-lg) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.button {
+  display: inline-block;
+  @include margin(16, right);
+}
+
+.header {
+  @include margin(16, right);
+  @include margin(0, (top, bottom));
+  @include type-size(200);
+  font-weight: normal;
+  margin-top: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  @media (min-width: $viewport-lg) {
+    justify-content: right;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.last-updated-container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.row {
+  @media (min-width: $viewport-lg) {
+    @include margin(16, top);
+  }
+  > div {
+    @include margin(16, bottom);
+    @media (min-width: $viewport-lg) {
+      margin: 0;
+    }
+    &:first-child {
+      @media (max-width: $viewport-lg) {
+        order: 3;
+      }
+    }
+  }
+}

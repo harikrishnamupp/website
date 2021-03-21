@@ -1,0 +1,55 @@
+.button {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  border-bottom: 1px solid $color-slate-500;
+  display: block;
+  background: transparent;
+  cursor: pointer;
+  h3 {
+    @include type-size(400);
+  }
+}
+
+.toggle {
+  display: inline-block;
+  margin-left: spacer(16);
+}
+
+.panel {
+  padding-top: spacer(32);
+  margin-left: spacer(32);
+  .path-description {
+    margin-bottom: 0;
+    margin-left: spacer(32);
+  }
+  dl {
+    margin-left: spacer(32);
+    dt {
+      font-weight: bold;
+      font-family: monospace;
+      @include type-size(400);
+    }
+    dd {
+      margin-bottom: spacer(32);
+
+      p {
+        margin: spacer(8) 0;
+      }
+    }
+  }
+}
+
+.type {
+  color: $color-slate-600;
+  font-family: monospace;
+}
+
+.path-example {
+  [aria-hidden]::after {
+    text-decoration: none;
+    display: inline-block;
+    @include margin(4, left);
+    @include new-window-icon();
+  }
+}

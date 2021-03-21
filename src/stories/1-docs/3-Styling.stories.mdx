@@ -1,0 +1,43 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Styling" />
+
+# Styling
+
+We use [SASS Modules](https://www.gatsbyjs.org/docs/css-modules/) to keep our styles scoped to components and prevent global styles. Individual components should have their own file, and that file should mirror that component's place in the directory. So, for example, a component in `/src/components/common/beetle.js` should have a SCSS file at `/src/scss/components/common/beetle.css`.
+
+If you create a `margin`, `padding`, or `font-size` that does not use our pre-defined spacing or type mixins, your PR will be flagged. To prevent this, add `// ignore-style-rule` to the end of the style declarataion:
+
+```
+margin: 45px; // ignore-style-rule
+```
+
+## Spacing
+
+Avoid using absolute margin and padding in your style. Instead, use our pre-defined spacer mixins:
+
+```
+margin: spacer(4)
+```
+
+The definitions of the type sizes are in `src/scss/helpers.module.scss` and in the [website documentation](https://covid19tracking.github.io/website-docs/?path=/story/layout--container).
+
+
+## Type sizing
+
+Avoid using absolute font sizes in your style. Instead, use our pre-defined font size mixin:
+
+```
+@include type-size(200);
+```
+
+The definitions of the type sizes are in `src/scss/type.module.scss` and in the [website documentation](https://covid19tracking.github.io/website-docs/?path=/story/typography--link).
+
+
+## Utility classes
+
+The following utility classes are available globaly:
+
+- `a11y-only` - Makes an element hidden visually, but still accessible for screen readers.
+- `js-disabled` - Element is only visible if Javascript is **disabled**
+- `js-enabled` - Element is only visible if Javascript is **enabled**

@@ -1,0 +1,16 @@
+.header {
+  @include type-size(500);
+  line-height: 1.25;
+  font-weight: bold;
+  margin-top: 0;
+  @media (min-width: $viewport-md) {
+    @include type-size(600);
+  }
+  @media (min-width: $viewport-lg) {
+    max-width: 38rem;
+    @include type-size(600);
+  }
+  @media (min-width: $viewport-xl) {
+    @include type-size(700);
+  }
+}

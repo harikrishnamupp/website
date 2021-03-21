@@ -1,0 +1,68 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  @include margin(8, bottom);
+  flex-basis: 100% !important;
+  max-width: 100% !important;
+  tr,
+  td,
+  th {
+    border-bottom: 1px solid $color-slate-200;
+    text-align: left;
+    font-size: 1rem;
+    vertical-align: top;
+  }
+  th {
+    font-weight: bolder;
+    background: $color-slate-100;
+  }
+  th,
+  td {
+    @include padding(16);
+  }
+}
+
+.cell-label {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0.75rem 0;
+  @media (min-width: $viewport-lg) {
+    display: none;
+  }
+}
+
+.header {
+  display: none;
+  @media (min-width: $viewport-lg) {
+    display: table-row;
+  }
+}
+
+.row {
+  display: block;
+  border-bottom: 1px solid $color-slate-500;
+  padding: 2rem 0;
+  &:first-child {
+    padding-top: 0;
+  }
+  @media (min-width: $viewport-lg) {
+    display: table-row;
+    border-bottom: 1px solid $color-slate-200;
+    transition: background-color 0.2s;
+    padding: 0;
+  }
+  td {
+    margin: 0;
+    display: block;
+    border: 0;
+    @media (min-width: $viewport-lg) {
+      display: table-cell;
+    }
+  }
+}
+
+.caption {
+  caption-side: bottom;
+  text-align: left;
+}

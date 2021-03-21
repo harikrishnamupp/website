@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components : Race : CTA Links renders correctly 1`] = `
+<div
+  className="links"
+>
+  <a
+    className="cta centered bold"
+    href="/race/dashboard"
+  >
+    See the dashboard
+    <span
+      aria-hidden={true}
+      className="arrow"
+    >
+       
+      →
+    </span>
+  </a>
+  <a
+    className="cta centered"
+    href="https://docs.google.com/spreadsheets/d/e/2PACX-1vS8SzaERcKJOD_EzrtCDK1dX1zkoMochlA9iHoHg_RSw3V8bkpfk1mpw4pfL5RdtSOyx_oScsUtyXyk/pub?gid=43720681&single=true&output=csv"
+    onClick={[Function]}
+    rel="noreferrer"
+    target={false}
+  >
+    Get the complete dataset (CSV)
+    <span
+      aria-hidden={true}
+      className="arrow"
+    >
+       
+      →
+    </span>
+  </a>
+  <a
+    className="cta centered"
+    href="/race/about"
+  >
+    Learn more about the tracker
+    <span
+      aria-hidden={true}
+      className="arrow"
+    >
+       
+      →
+    </span>
+  </a>
+</div>
+`;

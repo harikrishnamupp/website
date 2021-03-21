@@ -1,0 +1,27 @@
+.chart {
+  overflow: visible !important;
+}
+
+.y-tick-label {
+  overflow: visible !important;
+  text-anchor: end;
+}
+
+.x-tick-label {
+  text-anchor: middle;
+}
+
+.label {
+  fill: $color-slate-500;
+  @include type-size(100);
+}
+
+.annotation {
+  fill: $color-slate-700;
+  @include type-size(200);
+}
+
+.grid-line {
+  stroke: $color-slate-300;
+  stroke-width: 0.7px;
+}

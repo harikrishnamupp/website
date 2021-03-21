@@ -1,0 +1,169 @@
+.flip-colors {
+  .caret {
+    @media (max-width: $viewport-lg) {
+      background-color: white;
+    }
+    svg {
+      fill: $color-plum-700;
+    }
+  }
+  .sub-menu {
+    border-top: none;
+    @include margin(8, top);
+  }
+}
+
+.caret {
+  appearance: none;
+  background: none;
+  @media (max-width: $viewport-lg) {
+    background-color: $color-plum-500;
+    border-radius: 50%;
+    height: 22px;
+    width: 22px;
+  }
+  border: none;
+  box-shadow: none;
+  margin-left: spacer(8);
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  padding: 0;
+  top: 3px;
+  &:focus {
+    outline: 2px dotted white;
+  }
+  @media (any-hover: hover) {
+    width: spacer(24);
+    height: spacer(24);
+    margin-left: spacer(8);
+    svg {
+      margin-bottom: spacer(4);
+    }
+  }
+
+  svg {
+    fill: #ffffff;
+    transition: transform 0.2s ease-in;
+    transform-origin: center;
+
+    @media (hover: none) {
+      position: absolute;
+      top: 8px;
+      left: 5px;
+    }
+  }
+
+  &[aria-expanded='true'] svg {
+    transform: rotate(-180deg);
+    transform-origin: center;
+    transition: transform 0.2s ease-out;
+  }
+}
+
+.menu-item {
+  @include type-size(300);
+  &:hover {
+    [data-reach-menu] {
+      display: block;
+    }
+  }
+  a:focus {
+    @include link-focus-dark-bg;
+  }
+}
+
+@media (max-width: $viewport-lg) {
+  .nav-label {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: $viewport-sm) {
+  .nav-label {
+    justify-content: space-between;
+  }
+}
+
+.sub-menu {
+  display: block;
+  position: absolute;
+  text-align: left;
+
+  background-color: #ffffff;
+  color: $color-plum-700;
+
+  min-width: 15em;
+
+  top: 20px;
+  border-top: 20px solid $color-plum-700;
+  outline: solid 2px $color-plum-700;
+  padding: spacer(4);
+
+  a.menu-link {
+    color: $color-plum-700;
+    display: block;
+    padding: spacer(8);
+    cursor: pointer;
+    &:hover,
+    &:focus,
+    &[data-selected] {
+      color: white;
+      background: black;
+    }
+  }
+  div {
+    @media (max-width: $viewport-lg) {
+      @include margin(8, bottom);
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.mobile {
+  display: grid;
+  row-gap: 0.5rem;
+  grid-template-columns: 100%;
+
+  @media (max-width: $viewport-lg) and (min-width: $viewport-ms) {
+    row-gap: 1rem;
+    grid-template-columns: repeat(3, 33%);
+  }
+  @media (max-width: $viewport-ms) and (min-width: $viewport-sm) {
+    grid-template-columns: repeat(2, 49%);
+  }
+
+  .sub-menu {
+    border-top: none;
+    top: auto;
+    line-height: 1rem;
+    z-index: 2;
+  }
+
+  @media (max-width: $viewport-sm) {
+    .sub-menu {
+      position: relative;
+      border: 0;
+      top: 0;
+      background: transparent;
+      padding-left: spacer(16);
+      a,
+      a[aria-current] {
+        color: $color-plum-100;
+      }
+      &:focus {
+        @include link-focus-dark-bg;
+      }
+    }
+  }
+  .menu-item {
+    &:hover {
+      [data-reach-menu][hidden] {
+        display: none;
+      }
+    }
+  }
+}

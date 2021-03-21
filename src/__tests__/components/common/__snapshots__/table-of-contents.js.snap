@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components : Common: Table of Contents renders correctly 1`] = `
+<div
+  className="tableOfContents"
+>
+  <h2>
+    Table of contents
+  </h2>
+  <ul>
+    <li
+      className={false}
+    >
+      <strong>
+        A
+      </strong>
+    </li>
+    <li
+      className="subItem"
+    >
+      <a
+        href="#b"
+      >
+        B
+      </a>
+    </li>
+  </ul>
+</div>
+`;

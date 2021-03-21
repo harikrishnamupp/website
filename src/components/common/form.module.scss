@@ -1,0 +1,142 @@
+.form {
+  margin-bottom: spacer(64);
+  position: relative;
+  input[type='text'],
+  input[type='email'],
+  input[type='search'],
+  input[type='date'],
+  select,
+  textarea {
+    width: 100%;
+    @include padding(16);
+    border: 1px solid $color-link;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: spacer(4);
+    margin-bottom: spacer(32);
+    resize: vertical;
+    display: block;
+  }
+
+  &.no-margin {
+    margin-bottom: 0;
+  }
+
+  .input-description {
+    margin-bottom: spacer(16) !important;
+  }
+
+  .description-container {
+    margin-bottom: spacer(16);
+  }
+
+  .input-defined-length {
+    display: grid;
+    @media (max-width: $viewport-ms) {
+      grid-template-columns: auto 1fr;
+      grid-gap: spacer(16);
+      align-items: end;
+    }
+  }
+
+  textarea {
+    height: 150px;
+  }
+
+  [type='radio'],
+  [type='checkbox'] {
+    display: inline-block;
+    @include margin(16, right);
+  }
+
+  .label {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: spacer(16);
+    .required {
+      @include type-size(100);
+      text-transform: uppercase;
+      color: $color-slate-500;
+    }
+  }
+
+  .detail-container {
+    margin-bottom: spacer(32);
+  }
+
+  fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  @media (max-width: $viewport-md) {
+    input[type='text'],
+    input[type='email'],
+    select,
+    textarea {
+      width: 100%;
+    }
+  }
+
+  .input-header {
+    @include margin(4, bottom);
+    @include type-size(500);
+  }
+
+  button,
+  [type='submit'] {
+    cursor: pointer;
+    border: none;
+    background: $color-link;
+    border-radius: 3px;
+    @include padding(16);
+    color: white;
+    &[disabled] {
+      cursor: not-allowed;
+      background: $color-slate-600;
+      color: white;
+    }
+  }
+
+  .bot-field {
+    display: none;
+  }
+
+  input {
+    flex: 0 auto;
+  }
+
+  .select {
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='$color-link' height='30' viewBox='0 0 24 24' width='30' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 50%;
+  }
+
+  .fieldset {
+    @include margin(32, bottom);
+    border: 0;
+
+    .radio-label,
+    .checkbox-label {
+      display: block;
+      align-items: baseline;
+      @include margin(8, top bottom);
+    }
+
+    .fieldset-options {
+      @include padding(4);
+    }
+  }
+
+  input[type='radio'],
+  input[type='checkbox'] {
+    @include margin(8, right);
+  }
+}

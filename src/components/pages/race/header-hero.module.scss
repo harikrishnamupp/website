@@ -1,0 +1,23 @@
+.hero {
+  padding: spacer(24) 0;
+  background: $color-plum-700;
+  color: white;
+  @media (min-width: $viewport-lg) {
+    padding: spacer(32) 0;
+  }
+}
+
+.image {
+  @media (min-width: $viewport-lg) {
+    margin-top: toRem(-64);
+  }
+}
+
+.credit {
+  display: block;
+  text-align: right;
+  color: $color-plum-200;
+  @include type-size(100);
+  line-height: 2.5;
+  margin-bottom: spacer(8);
+}

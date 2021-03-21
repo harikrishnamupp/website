@@ -1,0 +1,8 @@
+.cache/
+.github/
+_api/
+_data/
+_site/
+build/
+coverage/
+public/

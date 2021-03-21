@@ -1,0 +1,17 @@
+.warning {
+  @include padding(16, top bottom);
+  background: $color-honey-300;
+  p {
+    margin: 0;
+  }
+  a {
+    color: black;
+  }
+  button {
+    @include remove-button-style();
+    display: block;
+    float: right;
+    @include type-size(400);
+    @include margin(32, left);
+  }
+}

@@ -1,0 +1,24 @@
+.header {
+  @include margin(64, bottom);
+}
+
+.section {
+  @include margin(64, top bottom);
+}
+
+.logos {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  img {
+    filter: grayscale(1);
+    height: 1.5rem;
+    margin: 0 1.8rem 2rem 1.8rem; // ignore-style-rule
+    @media (min-width: $viewport-lg) {
+      height: 2rem;
+      margin: 0 spacer(32) spacer(64) spacer(32);
+      margin: 0 1.8rem 3.125rem 1.8rem; // ignore-style-rule
+    }
+  }
+}

@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components : Pages : Blog : Lede renders correctly 1`] = `
+<div
+  className="lede"
+>
+  <h1>
+    Test headline
+  </h1>
+  <p
+    className="ledeContent"
+  >
+    This is a test blog lede.
+  </p>
+  <div
+    className="bylineRow"
+  >
+    <div
+      className="byline"
+    >
+      <span
+        className="bylineText"
+      >
+        <span
+          className="author"
+        >
+          By 
+          <a
+            className="authorInner"
+            href="https://twitter.com/test"
+          >
+            test name
+          </a>
+        </span>
+        <span
+          className="date"
+        />
+      </span>
+    </div>
+    <div
+      className="wrapper"
+    >
+      <a
+        className="socialButton"
+        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcovidtracking.com%2Faskld-loaks-lopde"
+      >
+        <img
+          alt="Share on Facebook"
+          src="test-file-stub"
+        />
+      </a>
+      <a
+        className="socialButton"
+        href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fcovidtracking.com%2Faskld-loaks-lopde&text=This%20is%20a%20test%20blog%20lede."
+      >
+        <img
+          alt="Share on Twitter"
+          src="test-file-stub"
+        />
+      </a>
+      <a
+        className="socialButton"
+        href="#"
+        onClick={[Function]}
+      >
+        <img
+          alt="Copy link"
+          src="test-file-stub"
+        />
+      </a>
+    </div>
+  </div>
+</div>
+`;

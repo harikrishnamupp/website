@@ -1,0 +1,33 @@
+@import '~scss/colors.module.scss';
+
+.interactive-bar {
+  &:hover,
+  &.selected {
+    stroke: black;
+  }
+}
+.annotation-bubble-svg {
+  &:hover {
+    fill: black;
+    text {
+      fill: white;
+    }
+    .annotation-bubble-svg-fill {
+      fill: black;
+    }
+  }
+  .annotation-bubble-svg-fill {
+    fill: white;
+  }
+}
+
+.chart {
+  .directions {
+    display: none;
+  }
+  &:focus {
+    .directions {
+      display: block;
+    }
+  }
+}
