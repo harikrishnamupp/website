@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components : Pages : Race : Dashboard : Table Notes renders correctly 1`] = `
+Array [
+  <h4
+    className="header"
+    id="notes-nv"
+  >
+    Notes
+     
+    <span
+      className="a11y-only"
+    >
+      on 
+      ethnicity
+       for 
+      Nevada
+    </span>
+  </h4>,
+  <ul
+    className="list"
+  >
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          1
+        </span>
+      </span>
+       
+      This is a note
+    </li>
+    <li>
+      <span
+        aria-hidden={true}
+        className="note unlinked"
+      >
+        <span>
+          2
+        </span>
+      </span>
+       
+        This is another note with trailing space   
+    </li>
+  </ul>,
+]
+`;

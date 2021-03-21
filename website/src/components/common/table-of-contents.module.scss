@@ -1,0 +1,26 @@
+.table-of-contents {
+  @include margin(32, bottom);
+  @include padding(32);
+  background: $color-plum-100;
+  h2 {
+    margin: 0;
+    @include type-size(400);
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    li {
+      @include margin(16, bottom);
+      &.sub-item {
+        @include margin(32, left);
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &.top-margin {
+    @include margin(64, top);
+  }
+}

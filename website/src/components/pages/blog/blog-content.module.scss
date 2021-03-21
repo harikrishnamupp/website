@@ -1,0 +1,70 @@
+.content {
+  @include row();
+  @include col(4 6 10);
+  margin: 0 auto;
+
+  & > *:not(.image) {
+    @media (min-width: $viewport-md) and (max-width: $viewport-lg) {
+      // non-image items become 8 cols on tablet
+      flex-basis: 80%;
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (min-width: $viewport-lg) {
+      // non-image items become 6 cols wide on desktop
+      flex-basis: 60%;
+      max-width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    line-height: 1.6;
+  }
+
+  ul,
+  ol {
+    @include margin(0, top);
+    @include margin(32, bottom);
+
+    & > li > p {
+      @include margin(0, bottom);
+    }
+
+    li + li {
+      @include margin(24, top);
+    }
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  blockquote {
+    color: $color-plum-600;
+    border-left: 2px solid $color-plum-600;
+    padding-left: spacer(24);
+    margin-left: spacer(4);
+    &::before {
+      content: '“';
+    }
+    &::after {
+      content: '”';
+    }
+    p {
+      margin: 0;
+      display: inline;
+    }
+  }
+
+  table {
+    @media only screen and (max-width: $viewport-lg) {
+      white-space: initial;
+    }
+  }
+}
+
+hr {
+  height: 1px;
+  background-color: $color-slate-200;
+  border: none;
+}

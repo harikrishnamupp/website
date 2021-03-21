@@ -1,0 +1,132 @@
+.header {
+  font-weight: normal;
+  @include margin(24, top);
+  @media (min-width: $viewport-lg) {
+    text-align: center;
+  }
+}
+
+.race-row.emphasis {
+  div.bar {
+    background-color: $color-plum-500;
+  }
+  .mortality-rate-label {
+    font-weight: bold;
+  }
+}
+
+.spacer {
+  flex-basis: 20%;
+
+  @media (max-width: $viewport-md) {
+    flex-basis: 0%;
+    @include margin(8, bottom);
+  }
+}
+
+.charts {
+  width: 100%;
+
+  @media (max-width: $viewport-md) {
+    overflow: hidden; // see .race-row note below
+  }
+
+  .header {
+    display: flex;
+    @include margin(4, bottom);
+
+    span {
+      font-weight: bold;
+      @include type-size(300);
+    }
+  }
+
+  .race-row {
+    display: flex;
+    @include margin(8, bottom);
+    align-items: center;
+
+    @media (max-width: $viewport-md) {
+      @include margin(16, bottom);
+      flex-wrap: wrap;
+      // this makes the flex-basis bars (max. 80%) expand to
+      // fill the whitespace on smaller devices
+      width: 120%;
+    }
+
+    div {
+      @include type-size(200);
+      text-align: right;
+      line-height: 1.2;
+
+      height: 2.4rem;
+      @include padding(8, right);
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-basis: 20%;
+
+      @media (max-width: $viewport-md) {
+        height: auto;
+        padding-right: 0;
+        justify-content: left;
+        flex-basis: 100%;
+        @include margin(4, bottom);
+      }
+    }
+
+    .bar {
+      height: 2rem;
+      background-color: $color-plum-300;
+      border: 1px solid black;
+    }
+
+    .mortality-rate-label {
+      flex-basis: 5%;
+      @include type-size(300);
+      @include padding(8, left);
+    }
+  }
+}
+
+.disclosure-wrapper {
+  display: flex;
+
+  .disclosure-container {
+    flex-basis: 80%;
+
+    @media (max-width: $viewport-md) {
+      flex-basis: 100%;
+    }
+  }
+
+  .show-notes {
+    display: block;
+    &:hover {
+      text-decoration: underline;
+    }
+    background: transparent;
+    border: 0;
+    text-decoration: underline;
+    color: $color-slate-600;
+    margin-top: spacer(16);
+    margin-bottom: spacer(16);
+    padding: 0;
+    cursor: pointer;
+    abbr {
+      display: inline-block;
+      margin-left: spacer(16);
+    }
+  }
+}
+
+.notes {
+  color: $color-slate-600;
+}
+
+.paragraph {
+  @media (max-width: $viewport-md) {
+    @include type-size(300);
+  }
+}

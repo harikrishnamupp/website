@@ -1,0 +1,9 @@
+.text {
+  @media (min-width: $viewport-lg) {
+    @include type-size(400);
+    max-width: 38rem;
+  }
+  @media (min-width: $viewport-xl) {
+    max-width: 50rem;
+  }
+}

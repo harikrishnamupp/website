@@ -1,0 +1,28 @@
+.total {
+  background-color: $color-blueberry-100;
+  text-align: right;
+  @include margin(24, bottom);
+  padding: toRem(12) toRem(15);
+  @media (min-width: $viewport-lg) {
+    margin-bottom: 0;
+  }
+}
+
+.number,
+.label {
+  @include margin(8, right);
+}
+
+.number {
+  @include bold-type-size(500);
+  line-height: 1.2;
+  margin-top: toRem(6);
+  margin-bottom: toRem(2);
+}
+
+.label {
+  @include type-size(100);
+  line-height: 1rem;
+  font-weight: 700;
+  margin-bottom: toRem(6);
+}

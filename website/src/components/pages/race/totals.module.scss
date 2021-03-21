@@ -1,0 +1,15 @@
+.totals {
+  margin: spacer(64) 0 0;
+  h3 {
+    @include type-size(200);
+  }
+}
+
+.totals-wrap {
+  margin-top: spacer(24);
+  @media (min-width: $viewport-lg) {
+    display: grid;
+    grid-column-gap: 1%;
+    grid-template-columns: repeat(2, 50%);
+  }
+}

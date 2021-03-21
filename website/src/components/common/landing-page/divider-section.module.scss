@@ -1,0 +1,23 @@
+$border: 1px solid $color-slate-200;
+
+.section {
+  border-top: $border;
+  border-bottom: $border;
+  padding: spacer(32) 0;
+  margin: spacer(32) 0;
+  @media (min-width: $viewport-lg) {
+    padding: spacer(80) 0;
+    margin: spacer(80) 0;
+  }
+
+  &.no-border {
+    border: 0;
+  }
+
+  &.no-margin {
+    margin: 0;
+  }
+  &.no-border-bottom {
+    border-bottom: 0;
+  }
+}

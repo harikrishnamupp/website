@@ -1,0 +1,25 @@
+.definition-button {
+  @include remove-button-style();
+  @include margin(16, top);
+  display: block;
+  font-weight: bold;
+  text-align: left;
+  .arrow-down,
+  .arrow-up {
+    @include margin(8, left);
+  }
+  .arrow-up {
+    display: none;
+  }
+  .arrow-down {
+    display: inline-block;
+  }
+  &[aria-expanded='true'] {
+    .arrow-up {
+      display: inline-block;
+    }
+    .arrow-down {
+      display: none;
+    }
+  }
+}

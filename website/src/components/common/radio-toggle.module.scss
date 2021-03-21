@@ -1,0 +1,43 @@
+@import '~scss/colors.module.scss';
+
+%toggle-active {
+  color: black;
+  border: solid black 2px;
+  font-weight: 700;
+  z-index: 1;
+}
+
+%toggle-inactive {
+  color: $color-slate-600;
+  border: solid $color-slate-200 2px;
+  font-weight: initial;
+  &:before {
+    display: block;
+    content: attr(title);
+    font-weight: 700;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}
+
+.toggle {
+  align-self: flex-start;
+  cursor: pointer;
+  display: flex;
+  width: fit-content;
+  button {
+    @extend %toggle-inactive;
+    cursor: pointer;
+    @include type-size(100);
+    margin: -1px; // ignore-style-rule
+    padding: 2px 15px; // ignore-style-rule
+    white-space: nowrap;
+    background-color: transparent;
+    line-height: 1.5;
+
+    &.active {
+      @extend %toggle-active;
+    }
+  }
+}

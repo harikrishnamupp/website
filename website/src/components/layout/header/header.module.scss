@@ -1,0 +1,250 @@
+.tools {
+  display: none;
+  @include type-size(100);
+
+  @media (min-width: $viewport-lg) {
+    display: flex;
+  }
+}
+
+.search-container {
+  @include margin(16, right);
+}
+
+.project-logo {
+  &:focus {
+    @include link-focus-dark-bg;
+  }
+}
+
+.get-involved {
+  display: inline-block;
+  @media (min-width: $viewport-lg) {
+    line-height: 1.75;
+    height: 35px; // match the search box height
+  }
+  padding: 0.4rem 0.5rem; // ignore-style-rule
+  transition: all 0.2s;
+
+  font-weight: bold;
+  background: $color-honey-300;
+  color: $color-plum-800;
+  border-radius: 4px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    @include link-focus;
+  }
+
+  @media (max-width: $viewport-lg) {
+    margin-top: spacer(24);
+
+    &:focus {
+      @include link-focus-dark-bg;
+    }
+  }
+}
+
+.site-nav-container {
+  width: 60%;
+  text-align: right;
+  @media (min-width: $viewport-md) {
+    width: 80%;
+  }
+}
+
+.flip-colors {
+  .atlantic-banner {
+    div {
+      border-top: 1px solid $color-plum-700;
+      opacity: 0.8;
+    }
+  }
+}
+
+.atlantic-banner {
+  margin-top: spacer(16);
+  display: flex;
+  color: white;
+  text-transform: uppercase;
+  align-items: center;
+  span,
+  img {
+    display: flex;
+    margin-right: spacer(16);
+  }
+  img {
+    padding-bottom: spacer(4);
+    width: 78px;
+  }
+  span {
+    padding-bottom: 0.1rem;
+    margin-right: spacer(8);
+    font-size: 0.625rem; /* exception to the type mixins */
+    line-height: 0.8rem;
+  }
+  div {
+    display: flex;
+    border-top: 1px solid white;
+    width: 100%;
+    height: 1px;
+    opacity: 0.2;
+  }
+}
+
+.container {
+  background: $color-plum-700;
+  &.flip-colors {
+    background: white;
+  }
+  padding-bottom: spacer(32);
+  &.has-navigation {
+    padding-bottom: 0;
+  }
+}
+
+.site-header {
+  margin-bottom: 3rem; // ignore-style-rule
+  @media (min-width: $viewport-md) {
+    @include margin(64, bottom); // 4rem
+  }
+
+  &.no-margin {
+    margin-bottom: 0;
+  }
+
+  img {
+    margin-bottom: 0;
+  }
+
+  .page-title {
+    margin: 0 0 spacer(8);
+    @include type-size(600);
+    line-height: 1.2;
+    color: white;
+
+    @media (max-width: $viewport-md) {
+      @include type-size(500);
+    }
+  }
+
+  .nav-container {
+    display: flex;
+    float: right;
+    @media (min-width: $viewport-lg) {
+      float: none;
+    }
+  }
+
+  &.flip-colors {
+    nav {
+      a {
+        color: $color-plum-700;
+      }
+    }
+  }
+
+  nav {
+    display: none;
+    align-self: center;
+    break-before: always;
+
+    @media (min-width: $viewport-lg) {
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    a {
+      color: $color-plum-100;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    ul {
+      padding-left: 0;
+      margin: 0;
+      line-height: 1;
+      list-style-type: none;
+
+      li {
+        margin-bottom: 0.5625rem;
+        @media (min-width: $viewport-lg) {
+          display: inline-block;
+          margin-right: spacer(16);
+          margin-bottom: 0;
+          line-height: 1;
+          position: relative;
+          &:last-child {
+            margin-right: 0;
+          }
+          a {
+            padding-bottom: spacer(4);
+            position: relative;
+            z-index: 2;
+          }
+
+          a:focus {
+            @include link-focus-dark-bg;
+          }
+          &:hover > a {
+            @include link-hover-dark-bg;
+          }
+        }
+      }
+
+      li:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .site-title-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    transition: display 150ms;
+    @include padding(24, top);
+  }
+
+  .title-subnav-container {
+    margin-top: spacer(64);
+    @media (max-width: $viewport-md) {
+      margin-top: 3rem; // ignore-style-rule
+    }
+    &.has-return-link {
+      margin-top: spacer(24);
+      @media (max-width: $viewport-md) {
+        margin-top: spacer(32);
+      }
+
+      .page-title {
+        margin: 0 0 spacer(24);
+        @media (max-width: $viewport-md) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: calc(1136px + 3rem);
+  padding: 0 spacer(32);
+  @media (max-width: $viewport-sm) {
+    padding: 0 spacer(16);
+  }
+  @media (min-width: $viewport-lg) {
+    // todo increase to 1rem if there's space with smaller search box
+    padding: 0 spacer(8);
+  }
+}
+
+.shutdown-box {
+  background: $color-honey-300;
+  @include padding(16, top bottom);
+}

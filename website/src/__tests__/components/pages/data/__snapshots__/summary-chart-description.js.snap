@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components : Pages : Data : Summary chart description renders correctly 1`] = `
+<div
+  className="a11y-only"
+>
+  false The most recent value
+      for Cases was 132 on Mar  4, and the earlist value for Cases was 1234 on Mar  3.
+      
+   
+  <a>
+    Access all chart data
+  </a>
+</div>
+`;

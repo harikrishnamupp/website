@@ -1,0 +1,99 @@
+@import './breakpoints.module.scss';
+
+@function encodecolor($string) {
+  @if type-of($string) == 'color' {
+    $hex: str-slice(ie-hex-str($string), 4);
+    $string: unquote('#{$hex}');
+  }
+  $string: '%23' + $string;
+  @return $string;
+}
+
+// Base font size. If need be, can be made responsive.
+$base-font-size: 16;
+
+// Spacer keys are the PX values used in the Figma files:
+// 4, 8, 16, 24, 32, 64, 80, 120
+// prettier-ignore
+$spacers: (
+  0: 0, // 0
+  4: .25rem, // 1
+  8: .5rem, // 2
+  16: 1rem, // 3
+  24: 1.5rem, // 4
+  32: 2rem, // 5
+  64: 4rem, // 6
+  80: 5rem, // 7
+  120: 7.5rem, // 8
+);
+
+@function spacer($key) {
+  @if map-has-key($spacers, $key) == false {
+    @error "$spacers map has no #{$key} key.";
+  }
+
+  $size: map-get($spacers, $key);
+  @return $size;
+}
+
+@mixin margin($key, $sides: (top right bottom left)) {
+  @if type-of($sides) != 'list' {
+    $sides: ($sides);
+  }
+
+  @if length($sides) == 4 {
+    margin: spacer($key);
+  } @else {
+    @each $side in $sides {
+      margin-#{$side}: spacer($key);
+    }
+  }
+}
+
+@mixin padding($key, $sides: (top right bottom left)) {
+  @if type-of($sides) != 'list' {
+    $sides: ($sides);
+  }
+
+  @if length($sides) == 4 {
+    padding: spacer($key);
+  } @else {
+    @each $side in $sides {
+      padding-#{$side}: spacer($key);
+    }
+  }
+}
+
+@function toRem($pixel: 16) {
+  @return ($pixel / 16) + rem;
+}
+
+@mixin a11y-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px; // ignore-style-rule
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+@mixin a11y-only-off {
+  overflow: auto;
+  margin: 0;
+  height: auto;
+  position: relative;
+}
+
+@mixin remove-button-style {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+@mixin new-window-icon($color: #000000) {
+  $image-color: encodecolor($color);
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 20 20'%3E%3Cpath d='M17 17H3V3h5V1H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5h-2z' fill='#{$image-color}'/%3E%3Cpath d='M19 1h-8l3.29 3.29-5.73 5.73 1.42 1.42 5.73-5.73L19 9V1z' fill='#{$image-color}'/%3E%3C/svg%3E%0A");
+}

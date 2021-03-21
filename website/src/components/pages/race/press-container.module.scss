@@ -1,0 +1,14 @@
+.container {
+  max-width: 600px;
+  margin-right: spacer(24);
+  margin-left: spacer(24);
+  margin-top: 60px;
+  @media (min-width: $viewport-md) {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+  @media (min-width: $viewport-lg) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

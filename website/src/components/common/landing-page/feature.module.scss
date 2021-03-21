@@ -1,0 +1,64 @@
+.feature {
+  align-items: center;
+  @include margin(32, bottom);
+
+  &,
+  a {
+    color: $color-slate-700;
+  }
+
+  @media (min-width: $viewport-lg) {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    @include margin(64, bottom);
+
+    &.no-element {
+      display: block;
+      flex-direction: none;
+      text-align: center;
+    }
+  }
+  .element {
+    margin-bottom: 1rem;
+    @media (min-width: $viewport-lg) {
+      flex: 60%;
+      @include padding(16, right);
+      margin-right: spacer(32);
+      margin-bottom: 0;
+    }
+    img {
+      border: 1px solid $color-slate-200;
+    }
+  }
+
+  .info {
+    @media (min-width: $viewport-lg) {
+      flex: 40%;
+      width: 40%;
+    }
+    @media (min-width: $viewport-lg) {
+      @include margin(24, left);
+    }
+    h3 {
+      @include margin(8, bottom);
+    }
+    p {
+      margin-top: 0;
+    }
+  }
+  &.flip {
+    @media (min-width: $viewport-lg) {
+      flex-direction: row-reverse;
+      .element {
+        margin-left: spacer(32);
+        margin-right: 0;
+        padding-left: spacer(16);
+        padding-right: 0;
+      }
+      .info {
+        margin-left: 0;
+      }
+    }
+  }
+}

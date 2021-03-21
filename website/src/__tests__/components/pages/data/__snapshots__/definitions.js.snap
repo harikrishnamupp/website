@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components : Pages : Data : Definitions renders correctly 1`] = `
+Array [
+  <h2>
+    Definitions
+  </h2>,
+  <button
+    aria-controls="panel--1"
+    aria-expanded={false}
+    className="definitionButton"
+    data-reach-disclosure-button=""
+    data-state="collapsed"
+    onClick={[Function]}
+    type="button"
+  >
+    Test definition A
+     
+    <span
+      aria-hidden={true}
+      className="arrowDown"
+    >
+      ↓
+    </span>
+     
+    <span
+      aria-hidden={true}
+      className="arrowUp"
+    >
+      ↑
+    </span>
+  </button>,
+  <div
+    data-reach-disclosure-panel=""
+    data-state="collapsed"
+    hidden={true}
+    id="panel--1"
+    tabIndex={-1}
+  >
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "Test <strong>definition</strong> content A.",
+        }
+      }
+    />
+  </div>,
+  <button
+    aria-controls="panel--2"
+    aria-expanded={false}
+    className="definitionButton"
+    data-reach-disclosure-button=""
+    data-state="collapsed"
+    onClick={[Function]}
+    type="button"
+  >
+    Test definition B
+     
+    <span
+      aria-hidden={true}
+      className="arrowDown"
+    >
+      ↓
+    </span>
+     
+    <span
+      aria-hidden={true}
+      className="arrowUp"
+    >
+      ↑
+    </span>
+  </button>,
+  <div
+    data-reach-disclosure-panel=""
+    data-state="collapsed"
+    hidden={true}
+    id="panel--2"
+    tabIndex={-1}
+  >
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "Test <strong>definition</strong> content B.",
+        }
+      }
+    />
+  </div>,
+]
+`;
+
+exports[`Components : Pages : Data : Definitions renders correctly 2`] = `
+Array [
+  <h2>
+    Definitions
+  </h2>,
+  <button
+    aria-controls="panel--5"
+    aria-expanded={false}
+    className="definitionButton"
+    data-reach-disclosure-button=""
+    data-state="collapsed"
+    onClick={[Function]}
+    type="button"
+  >
+    Test definition B
+     
+    <span
+      aria-hidden={true}
+      className="arrowDown"
+    >
+      ↓
+    </span>
+     
+    <span
+      aria-hidden={true}
+      className="arrowUp"
+    >
+      ↑
+    </span>
+  </button>,
+  <div
+    data-reach-disclosure-panel=""
+    data-state="collapsed"
+    hidden={true}
+    id="panel--5"
+    tabIndex={-1}
+  >
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "Test <strong>definition</strong> content B.",
+        }
+      }
+    />
+  </div>,
+  <button
+    aria-controls="panel--6"
+    aria-expanded={false}
+    className="definitionButton"
+    data-reach-disclosure-button=""
+    data-state="collapsed"
+    onClick={[Function]}
+    type="button"
+  >
+    Test definition A
+     
+    <span
+      aria-hidden={true}
+      className="arrowDown"
+    >
+      ↓
+    </span>
+     
+    <span
+      aria-hidden={true}
+      className="arrowUp"
+    >
+      ↑
+    </span>
+  </button>,
+  <div
+    data-reach-disclosure-panel=""
+    data-state="collapsed"
+    hidden={true}
+    id="panel--6"
+    tabIndex={-1}
+  >
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "Test <strong>definition</strong> content A.",
+        }
+      }
+    />
+  </div>,
+]
+`;

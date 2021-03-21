@@ -1,0 +1,175 @@
+@import './normalize.css';
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  @include type-size(200);
+  color: $text;
+  font-family: 'Open Sans', 'system-ui', '-apple-system', 'BlinkMacSystemFont',
+    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+  font: normal 100%/1.5;
+}
+
+img {
+  max-width: 100%;
+}
+
+li > :first-child {
+  margin-top: 0;
+}
+
+li > :last-child {
+  margin-bottom: 0;
+}
+
+li > p:first-child:not(:last-child) {
+  @include margin(8, bottom);
+}
+
+li > ul:last-child {
+  @include margin(8, bottom);
+}
+
+#gatsby-noscript {
+  display: none;
+}
+
+.a11y-only {
+  @include a11y-only();
+}
+
+.a11y-only.focusable:active,
+.a11y-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+a {
+  color: $color-link;
+  &:active {
+    color: $color-link--active;
+  }
+  &:hover {
+    @include link-hover;
+  }
+  &:focus {
+    @include link-focus;
+  }
+}
+
+p {
+  a {
+    color: inherit;
+  }
+}
+
+button,
+select,
+[role='switch'] {
+  &:focus {
+    outline: 2px dotted;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+* {
+  transition: color 0.2s;
+  transition: background-color 0.2s;
+  transition: border-bottom 0.15s;
+}
+
+.js-disabled {
+  display: none;
+}
+
+.js-enabled {
+  display: inline;
+}
+
+.js-enabled-block {
+  display: block;
+}
+
+.no-js {
+  .js-enabled {
+    display: none !important;
+  }
+
+  .js-disabled {
+    display: inline !important;
+  }
+
+  .js-disabled-block {
+    @media (min-width: $viewport-md) {
+      display: block !important;
+    }
+  }
+
+  .sub-menu-link {
+    color: $color-plum-700 !important;
+    background: white !important;
+    &:hover {
+      color: white !important;
+      background: black !important;
+    }
+  }
+
+  .state-note-expandable {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: auto;
+    position: relative;
+    width: auto;
+  }
+}
+
+/*
+
+Headers
+
+*/
+
+h1 {
+  @include type-size(700);
+}
+h2 {
+  @include type-size(600);
+}
+h3 {
+  @include type-size(500);
+}
+h4 {
+  @include type-size(400);
+}
+h5 {
+  @include type-size(300);
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+// Hide webkit search miscellany
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}

@@ -1,0 +1,125 @@
+.title {
+  font-weight: bold;
+  @include type-size(100);
+  max-width: 70%;
+  &.full-width {
+    max-width: 100%;
+  }
+}
+
+.value {
+  text-align: right;
+  white-space: pre;
+  @include type-size(200);
+  font-weight: bold;
+  line-height: 1;
+  &.null-value {
+    @include type-size(100);
+    line-height: normal;
+  }
+}
+
+.statistic-wrapper {
+  .statistic {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include margin(8, bottom);
+  }
+  &.subelement {
+    @include padding(8, left);
+    display: flex;
+    margin-top: spacer(8) * -1;
+
+    &::before {
+      @include padding(8, right);
+      content: '∟';
+      line-height: 0.9;
+    }
+  }
+}
+
+.group {
+  display: flex;
+  .statistic {
+    width: 50%;
+  }
+}
+
+.info {
+  flex: 100%;
+  line-height: 1;
+  @include margin(8, bottom);
+}
+
+.link {
+  color: $color-blueberry-400;
+  @include type-size(50);
+  display: block;
+  @include margin(8, right);
+  @include margin(4, bottom);
+  cursor: pointer;
+  border: none;
+  background: inherit;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.grey {
+  color: $color-slate-600;
+}
+
+.no-definition-link {
+  margin-bottom: spacer(8);
+}
+
+.drill-down {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  color: $color-slate-600;
+  @include margin(8, bottom);
+  .label {
+    @include type-size(100);
+  }
+  .calculated {
+    @include padding(4, top);
+    font-size: 11px; // ignore-style-rule
+    font-weight: normal;
+  }
+  .value {
+    font-size: 14px; // ignore-style-rule
+  }
+}
+
+.calculated-label {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  span {
+    @include padding(16, top);
+    @include type-size(100);
+    color: $color-slate-600;
+  }
+}
+
+.not-reported {
+  color: $color-slate-600;
+  @include type-size(100);
+}
+
+.no-asterisk {
+  // this is the width of an asterisk character
+  margin-right: 7.2px; // ignore-style-rule
+}
+
+.warning-container {
+  display: flex;
+  align-items: center;
+  img {
+    width: 16px;
+    @include margin(4, right);
+  }
+}

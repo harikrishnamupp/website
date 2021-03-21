@@ -1,0 +1,34 @@
+.cta {
+  color: $color-honey-700;
+  .arrow {
+    text-decoration: none;
+    display: inline-block;
+    @include margin(4, left);
+  }
+  &:hover {
+    @include link-hover;
+  }
+  .new-window::after {
+    @include new-window-icon($color-honey-700);
+  }
+}
+
+.centered {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  @include type-size(300);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.block {
+  display: block;
+}
+
+.extra-margin {
+  @include margin(32, top bottom);
+  display: block;
+}

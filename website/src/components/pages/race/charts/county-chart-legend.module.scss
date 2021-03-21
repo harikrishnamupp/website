@@ -1,0 +1,48 @@
+.asian-alone {
+  background: $qualitative-color-palette-100;
+}
+.white-alone {
+  background: $qualitative-color-palette-200;
+}
+.black-african-american-alone {
+  background: $qualitative-color-palette-300;
+}
+.hispanic-latino {
+  background: $qualitative-color-palette-400;
+}
+.aian-alone {
+  background: $qualitative-color-palette-500;
+}
+.nhpi-alone {
+  background: $qualitative-color-palette-600;
+}
+.two-or-more {
+  background: #555;
+}
+
+.swatch {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: spacer(8);
+  @include type-size(100);
+}
+
+.legend {
+  margin-top: spacer(32);
+  @include type-size(100);
+  h4 {
+    margin: 0;
+  }
+  ul {
+    padding: 0;
+    margin-top: 0;
+    list-style-type: none;
+    li {
+      @media (min-width: $viewport-lg) {
+        display: inline-block;
+        margin-right: spacer(32);
+      }
+    }
+  }
+}

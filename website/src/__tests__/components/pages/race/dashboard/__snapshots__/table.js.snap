@@ -1,0 +1,267 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components : Pages : Race : Dashboard : Table Content renders correctly 1`] = `
+<tbody>
+  <tr>
+    <th
+      className="group"
+      scope="row"
+    >
+      <span
+        role="text"
+      >
+        Black or African American alone
+      </span>
+    </th>
+    <td
+      className="borderLeft"
+    >
+      23
+      %
+    </td>
+    <td
+      className=""
+    >
+      <span
+        data-reach-tooltip-trigger=""
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseMove={[Function]}
+      >
+        <span
+          className="highlight"
+        >
+          46
+          %
+        </span>
+      </span>
+      <div
+        className="symbolSpacer"
+      >
+        <span
+          className="note"
+          data-reach-tooltip-trigger=""
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseMove={[Function]}
+        >
+          <a
+            href="#notes-ca"
+          >
+            <span
+              className="a11y-only"
+            >
+              Example note.
+            </span>
+            <span>
+              1
+            </span>
+          </a>
+        </span>
+        <span
+          className="disparitySymbol"
+        >
+          <a
+            data-reach-tooltip-trigger=""
+            href="#notes-ca"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onMouseMove={[Function]}
+          >
+            <img
+              alt="Racial/ethnic disparity likely."
+              src="test-file-stub"
+            />
+          </a>
+        </span>
+      </div>
+    </td>
+    <td
+      className=""
+    >
+      <span
+        data-reach-tooltip-trigger=""
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseMove={[Function]}
+      >
+        <span
+          className="highlight"
+        >
+          38
+          %
+        </span>
+      </span>
+      <div
+        className="symbolSpacer"
+      >
+        <span
+          className="note"
+          data-reach-tooltip-trigger=""
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseMove={[Function]}
+        >
+          <a
+            href="#notes-ca"
+          >
+            <span
+              className="a11y-only"
+            >
+              This is a note!
+            </span>
+            <span>
+              2
+            </span>
+          </a>
+        </span>
+        <span
+          className="disparitySymbol"
+        >
+          <a
+            data-reach-tooltip-trigger=""
+            href="#notes-ca"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onMouseMove={[Function]}
+          >
+            <img
+              alt="Racial/ethnic disparity likely."
+              src="test-file-stub"
+            />
+          </a>
+        </span>
+      </div>
+    </td>
+  </tr>
+</tbody>
+`;
+
+exports[`Components : Pages : Race : Dashboard : Table Header renders correctly 1`] = `
+<thead>
+  <tr>
+    <th
+      className="group"
+      scope="col"
+    >
+      <span
+        role="text"
+      >
+        Title
+      </span>
+    </th>
+    <th
+      className="borderLeft percent"
+      scope="col"
+    >
+      <span
+        role="text"
+      >
+        Percentage of
+        <br />
+        population
+      </span>
+    </th>
+    <th
+      className="percent"
+      scope="col"
+    >
+      <span
+        role="text"
+      >
+        <span
+          className="headerText"
+        >
+          Percentage of
+          <br />
+          cases
+          <div
+            className="symbolSpacer"
+          />
+        </span>
+      </span>
+    </th>
+    <th
+      className="percent"
+      scope="col"
+    >
+      <span
+        role="text"
+      >
+        <span
+          className="headerText"
+        >
+          Percentage of
+          <br />
+          deaths
+          <div
+            className="symbolSpacer"
+          />
+        </span>
+      </span>
+    </th>
+    <th
+      className="percent"
+      scope="col"
+    >
+      <span
+        role="text"
+      >
+        <span
+          className="headerText"
+        >
+          Percentage of
+          <br />
+          tests
+          <div
+            className="symbolSpacer"
+          />
+        </span>
+      </span>
+    </th>
+    <th
+      className="percent"
+      scope="col"
+    >
+      <span
+        role="text"
+      >
+        <span
+          className="headerText"
+        >
+          Percentage of
+          <br />
+          hospitalizations
+          <div
+            className="symbolSpacer"
+          />
+        </span>
+      </span>
+    </th>
+  </tr>
+</thead>
+`;

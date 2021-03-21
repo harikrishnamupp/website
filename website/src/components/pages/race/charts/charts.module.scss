@@ -1,0 +1,21 @@
+.show-chart-data {
+  display: block;
+  &:hover {
+    text-decoration: underline;
+  }
+  background: transparent;
+  font-weight: bold;
+  border: 0;
+  margin-top: spacer(16);
+  padding: 0;
+  cursor: pointer;
+  abbr {
+    display: inline-block;
+    margin-left: spacer(16);
+  }
+}
+
+.nyc-disclaimer {
+  margin-top: spacer(16);
+  display: block;
+}

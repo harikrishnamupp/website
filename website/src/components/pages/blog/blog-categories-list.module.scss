@@ -1,0 +1,64 @@
+.wrapper {
+  position: relative;
+}
+
+.container {
+  border-radius: 4px;
+  background-color: $color-plum-100;
+  @include padding(8, (top, bottom));
+
+  h3,
+  a {
+    @include type-size(100);
+    color: $color-plum-700;
+  }
+
+  h3 {
+    line-height: 1.6;
+  }
+
+  @media (min-width: $viewport-lg) {
+    @include margin(24, left);
+    min-width: 13rem;
+  }
+}
+
+.category {
+  @include padding(16, (left, right));
+  @include padding(8, top);
+
+  a {
+    line-height: 0.8;
+
+    .category-text {
+      line-height: 1.4;
+      @include margin(0);
+    }
+  }
+}
+
+.category-list {
+  border-top: 1px solid $color-plum-300;
+  list-style-type: none;
+  @include padding(0, left);
+  @include margin(0, bottom);
+  @include margin(8, top);
+
+  li {
+    @media (max-width: $viewport-lg) {
+      font-size: 1rem;
+      line-height: 2;
+    }
+    &:first-child {
+      @include padding(8, top);
+    }
+  }
+
+  &.opened {
+    display: block;
+  }
+
+  @media (min-width: $viewport-lg) {
+    display: block;
+  }
+}

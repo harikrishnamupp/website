@@ -1,0 +1,35 @@
+.press-list {
+  list-style-type: none;
+  margin: 0;
+  line-height: 1.3;
+  padding-left: 0;
+
+  li {
+    margin-bottom: spacer(24);
+  }
+
+  a {
+    color: black;
+    font-weight: bold;
+    @include type-size(300);
+    display: block;
+    margin-bottom: spacer(4);
+    &:hover {
+      @include link-hover;
+    }
+  }
+
+  .dot-separator {
+    display: inline-block;
+    margin: 0 spacer(8);
+    opacity: 0.4;
+  }
+}
+.source {
+  font-style: italic;
+  display: block;
+  font-weight: normal;
+}
+.title {
+  font-style: normal;
+}

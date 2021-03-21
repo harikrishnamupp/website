@@ -1,0 +1,36 @@
+.navigation-container {
+  @media (min-width: $viewport-lg) {
+    @include col(4 6 8);
+    margin: 0 auto;
+  }
+
+  @media (max-width: $viewport-lg) {
+    margin: 0;
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  @media (max-width: $viewport-sm) {
+    justify-content: center;
+  }
+}
+
+.navigation-item {
+  text-decoration: none;
+  @include margin(16, (left, right));
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.inactive-link {
+  pointer-events: none;
+  color: $color-slate-300;
+}
+
+.previous-caret img {
+  transform: rotate(-180deg);
+}

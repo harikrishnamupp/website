@@ -1,0 +1,53 @@
+const fs = require('fs-extra')
+const crypto = require('crypto')
+
+exports.sourceNodes = ({ actions, createNodeId, reporter }, configOptions) => {
+  return new Promise(async (resolve, reject) => {
+    const { createNode } = actions
+    const countyResults = {}
+    const demographics = require(configOptions.demographics)
+    const counties = await fs.readJson(configOptions.counties)
+    counties.forEach(county => {
+      const fipsKey =
+        !county.fips && county.county === 'New York City' ? 'nyc' : county.fips
+      if (!fipsKey) {
+        return
+      }
+      if (typeof countyResults[fipsKey] === 'undefined') {
+        countyResults[fipsKey] = {
+          name: county.county,
+          state: county.state,
+          fips: fipsKey,
+          current: county,
+          demographics: demographics.find(
+            element =>
+              element.fips.replace(/^0+/, '') === fipsKey.replace(/^0+/, ''),
+          ),
+        }
+      }
+    })
+    Object.keys(countyResults).forEach(fips => {
+      const county = countyResults[fips]
+      const digest = crypto
+        .createHash('md5')
+        .update(JSON.stringify(county))
+        .digest('hex')
+      const nodeTemplate = {
+        id: createNodeId(`${configOptions.type}.${fips}`),
+        children: [],
+        parent: null,
+        internal: {
+          type: configOptions.type,
+          contentDigest: digest,
+        },
+      }
+
+      createNode({ ...county, ...nodeTemplate })
+    })
+    if (Object.keys(countyResults).length < 1000) {
+      reject('There were not enough counties fetched')
+    }
+    reporter.success(`Imported ${Object.keys(countyResults).length} counties`)
+    resolve()
+  })
+}

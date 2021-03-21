@@ -1,0 +1,62 @@
+.container {
+  @include row();
+}
+
+.map::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: inset 3px 0px 6px -2px rgba(0, 0, 0, 0.4);
+}
+
+.search-button {
+  @media (min-width: $viewport-lg) {
+    @include margin(4, top);
+  }
+}
+
+.toggle {
+  align-self: flex-start;
+  cursor: pointer;
+  display: flex;
+  width: fit-content;
+  button {
+    @include remove-button-style();
+    color: $color-slate-600;
+    border: solid $color-slate-200 2px;
+    font-weight: initial;
+    &:before {
+      display: block;
+      content: attr(title);
+      font-weight: 700;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+    @include type-size(100);
+    margin: -1px; // ignore-style-rule
+    padding: 2px 15px; // ignore-style-rule
+    white-space: nowrap;
+
+    &.active {
+      color: black;
+      border: solid black 2px;
+      font-weight: 700;
+      z-index: 1;
+    }
+  }
+}
+
+.table-scroll {
+  overflow-y: scroll;
+  height: calc(80vh - 150px);
+  table {
+    margin-top: 0;
+  }
+}

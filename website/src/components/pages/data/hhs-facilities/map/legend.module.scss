@@ -1,0 +1,82 @@
+.wrapper {
+  @include margin(32, top);
+  :first-child {
+    align-self: flex-end;
+  }
+}
+
+.legend {
+  @include padding(8, top bottom);
+  @include type-size(100);
+  display: flex;
+  justify-content: flex-end;
+  @media (min-width: $viewport-md) {
+    @include margin(32, top);
+  }
+  > div {
+    flex-wrap: wrap;
+  }
+  .label {
+    font-weight: bold;
+    @include margin(8, bottom);
+  }
+  .scale {
+    display: flex;
+    flex-wrap: wrap;
+    @include margin(8, bottom);
+    > div {
+      width: 60px;
+      text-align: center;
+      align-self: end;
+      > div {
+        height: 15px;
+      }
+      &:first-child {
+        > div {
+          background: #cac3ba;
+        }
+      }
+      &:nth-child(2) {
+        > div {
+          background: $color-honey-400;
+        }
+      }
+      &:nth-child(3) {
+        > div {
+          background: $color-blueberry-200;
+        }
+      }
+      &:nth-child(4) {
+        > div {
+          background: $color-blueberry-300;
+        }
+      }
+      &:nth-child(5) {
+        > div {
+          background: $color-blueberry-400;
+        }
+      }
+      &:nth-child(6) {
+        > div {
+          background: $color-blueberry-500;
+        }
+      }
+
+      &:nth-child(7) {
+        @include margin(16, left);
+        > div {
+          border: 2.5px solid black;
+          width: 12px;
+          height: 12px;
+          border-radius: 6px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+.dates {
+  @include type-size(100);
+  @include margin(8, bottom top);
+}

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components : Layout : Data warning is displayed if there is content 1`] = `
+<div
+  className="warning"
+>
+  <div
+    className="container container"
+  >
+    <div
+      className="full"
+    >
+      <button
+        aria-label="Hide this warning"
+        onClick={[Function]}
+        type="button"
+      >
+        ×
+      </button>
+      <p
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "There are some data issues and <strong>we are on it</strong>.",
+          }
+        }
+        role="alert"
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,48 @@
+.asian-alone {
+  fill: $qualitative-color-palette-100;
+}
+.white-alone {
+  fill: $qualitative-color-palette-200;
+}
+.black-african-american-alone {
+  fill: $qualitative-color-palette-300;
+}
+.hispanic-latino {
+  fill: $qualitative-color-palette-400;
+}
+.aian-alone {
+  fill: $qualitative-color-palette-500;
+}
+.nhpi-alone {
+  fill: $qualitative-color-palette-600;
+}
+.two-or-more {
+  fill: #555;
+}
+
+.chart {
+  width: 100%;
+}
+
+.tick {
+  overflow: visible !important;
+}
+
+.label {
+  fill: black;
+  @include type-size(100);
+  &.centered {
+    text-anchor: middle;
+  }
+}
+
+.county-label {
+  overflow: visible !important;
+  text-anchor: end;
+}
+
+.vertical-tick {
+  stroke: white;
+  height: 100%;
+  stroke-width: 2px;
+}

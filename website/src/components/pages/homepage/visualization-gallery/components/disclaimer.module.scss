@@ -1,0 +1,24 @@
+.button {
+  @include remove-button-style();
+  text-decoration: underline;
+  color: $color-slate-700;
+  span[aria-hidden] {
+    display: inline-block;
+    text-decoration: none;
+    @include margin(8, left);
+  }
+}
+
+.disclaimer {
+  display: none;
+  &.is-open {
+    display: block;
+  }
+}
+
+.hide-mobile {
+  display: none;
+  @media (min-width: $viewport-md) {
+    display: block;
+  }
+}

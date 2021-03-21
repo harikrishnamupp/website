@@ -1,0 +1,146 @@
+$text: #303030;
+
+$placeholder: #7a7a7a;
+
+/*
+
+Brand colors
+
+*/
+// Plum
+$color-plum-50: #f8f8ff;
+$color-plum-100: #f2f2ff;
+$color-plum-200: #d1d1e8;
+$color-plum-300: #b6b7db;
+$color-plum-400: #8b8dc7;
+$color-plum-500: #6164ba;
+$color-plum-550: #5667ad;
+$color-plum-600: #575aad;
+$color-plum-700: #31347a;
+$color-plum-800: #111354;
+
+// Honey
+$color-honey-100: #fcf9eb;
+$color-honey-200: #fbe8a9;
+$color-honey-300: #f6ce7a;
+$color-honey-400: #ffad4a;
+$color-honey-500: #e2894e;
+$color-honey-600: #c66b3e;
+$color-honey-700: #924f34;
+$color-honey-800: #6e2f1f;
+
+// Blueberry
+$color-blueberry-100: #e2f1fc;
+$color-blueberry-200: #8cc7f4;
+$color-blueberry-250: #e5faff;
+$color-blueberry-300: #0091ea;
+$color-blueberry-400: #004399;
+$color-blueberry-450: #373b88;
+$color-blueberry-500: #012656;
+$color-blueberry-hover: transparentize($color-blueberry-200, 0.77);
+
+// Slate
+$color-slate-50: #f8f8f8;
+$color-slate-100: #edf1f2;
+$color-slate-150: #d8d8d8;
+$color-slate-200: #d2d6d7;
+$color-slate-300: #b7bcbd;
+$color-slate-400: #9ca1a2;
+$color-slate-500: #828688;
+$color-slate-600: #676b6d;
+$color-slate-700: #4c5153;
+$color-slate-800: #313638;
+
+//Strawberry
+$color-strawberry-100: #fbbcb2;
+$color-strawberry-200: #dc472e;
+
+/*
+
+Color primitives
+
+*/
+$color-link: black;
+$color-link--active: $color-plum-400;
+
+$color-link--hover: black;
+$color-link--hover--dark-bg: white;
+
+$color-infobox-question-light: #fef9cd;
+$color-infobox-question-dark: #5e4f24;
+
+$color-infobox-sync-light: #ddeffc;
+$color-infobox-sync-dark: #264a8c;
+
+$color-infobox-alert-light: #fedcd2;
+$color-infobox-alert-dark: #802509;
+
+$color-error-light: #f9ded9;
+$color-error-dark: #e35942;
+
+// Qualitative Six Color Palette, Colorblind Safe
+$qualitative-color-palette-100: #b5e3db;
+$qualitative-color-palette-200: #cccc00;
+$qualitative-color-palette-300: #a19bca;
+$qualitative-color-palette-400: #f4a071;
+$qualitative-color-palette-500: #2f6488;
+$qualitative-color-palette-600: #527740;
+
+
+$crdt-asian: #E35942;
+$crdt-white: #cccc00;
+$crdt-black: #a19bca;
+$crdt-non-hispanic: #111354;
+$crdt-latinx: #f4a071;
+$crdt-nhpi: #2f6488;
+$crdt-aian: #527740;
+
+:export {
+  text: $text;
+  link: $color-link;
+  linkActive: $color-link--active;
+  colorPlum100: $color-plum-100;
+  colorPlum200: $color-plum-200;
+  colorPlum300: $color-plum-300;
+  colorPlum400: $color-plum-400;
+  colorPlum500: $color-plum-500;
+  colorPlum600: $color-plum-600;
+  colorPlum700: $color-plum-700;
+  colorPlum800: $color-plum-800;
+  colorHoney100: $color-honey-100;
+  colorHoney200: $color-honey-200;
+  colorHoney300: $color-honey-300;
+  colorHoney400: $color-honey-400;
+  colorHoney500: $color-honey-500;
+  colorHoney600: $color-honey-600;
+  colorHoney700: $color-honey-700;
+  colorHoney800: $color-honey-800;
+  colorBlueberry100: $color-blueberry-100;
+  colorBlueberry200: $color-blueberry-200;
+  colorBlueberry300: $color-blueberry-300;
+  colorBlueberry400: $color-blueberry-400;
+  colorBlueberry500: $color-blueberry-500;
+  colorSlate100: $color-slate-100;
+  colorSlate200: $color-slate-200;
+  colorSlate300: $color-slate-300;
+  colorSlate400: $color-slate-400;
+  colorSlate500: $color-slate-500;
+  colorSlate600: $color-slate-600;
+  colorSlate700: $color-slate-700;
+  colorSlate800: $color-slate-800;
+  colorStrawberry100: $color-strawberry-100;
+  colorStrawberry200: $color-strawberry-200;
+  qualitativeColorPalette100: $qualitative-color-palette-100;
+  qualiTativecolorPalette200: $qualitative-color-palette-200;
+  qualiTativecolorPalette300: $qualitative-color-palette-300;
+  qualiTativecolorPalette400: $qualitative-color-palette-400;
+  qualiTativecolorPalette500: $qualitative-color-palette-500;
+  qualiTativecolorPalette600: $qualitative-color-palette-600;
+  crdtAsian: $crdt-asian;
+  crdtWhite: $crdt-white;
+  crdtBlack: $crdt-black;
+  crdtLatinx: $crdt-latinx;
+  crdtNonHispanic: $crdt-non-hispanic;
+  crdtNhpi: $crdt-nhpi;
+  crdtAian: $crdt-aian;
+}

@@ -1,0 +1,16 @@
+.wrapper {
+  h3 {
+    color: $color-plum-700;
+    @include type-size(200);
+    text-align: center;
+    @include padding(16, bottom);
+    @include margin(32, bottom);
+
+    @media (max-width: $viewport-lg) {
+      @include margin(8, top);
+      @include margin(0, bottom);
+    }
+  }
+
+  z-index: -1;
+}
